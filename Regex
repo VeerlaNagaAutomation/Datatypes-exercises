@@ -1,0 +1,143 @@
+## Mtatch ---->> matching the string starts with pattern or not
+
+# filename="reports.pdf"
+# # pattern ='[^abc]' # r
+# # pattern ='[abc]' # invalid filename
+# pattern =r'\w' # r
+# pattern = r'[a-zA-z0-9]' # r
+import re
+# match =re.match(pattern,filename)
+
+# if match:
+#     print(match.group())
+# else:
+#     print('invalid filename')
+##full match # entire string matches or not
+# ph ='9298209491'
+# # pattern =r'\d{10}' # 9298209491
+# pattern ='[0-9]{10}' # 9298209491
+# match = re.fullmatch(pattern,ph)
+# if match:
+#     print(match.group())
+# else:
+#     print("Invalid mobile number")
+
+# veh_no = 'KA53CJ0875'
+# # pattern='[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}'  #KA53CJ0875
+# pattern=r'\w{2}\d{2}\w{2}\d{4}' ##KA53CJ0875
+# match = re.fullmatch(pattern,veh_no)
+# if match:
+#     print(match.group())
+# else:
+#     print('Invalid vehical number')
+
+
+# string = """{ control = 1,signal = 1,element = 34,
+#           control = 2,signal = 2,element = 36,
+#           control = 3,signal = ,element = 37 }"""
+           
+# #required output is : 2 valid and 1 invalid controllers
+# pattern = 'signal\s*=\s*'
+
+
+# print(re.findall(r"[aeiouAEIOU]", "Hello Python")) ## ['e', 'o', 'o']
+# print(re.findall(r"\d", "Order123")) ## ['1', '2', '3']
+# print(re.sub(r"[A-Za-z]", "", "Py@thon#123")) #   @#123
+# Remove non-alphabets
+# print(re.sub(r"[^A-Za-z]", "", "Py@thon#123")) #   Python
+
+
+
+# Symbol	Meaning
+# *	0 or more
+# +	1 or more
+# ?	0 or 1
+# {m,n}	range
+# Examples
+# a*   → "", a, aaa
+# a+   → a, aaa
+# a?   → "" or a
+
+
+# print(re.findall(r'\d{2,4}',"12 123 12345")) # ['12', '123', '1234']
+
+
+
+# Greedy vs Lazy Quantifiers (Regex) — Simple Explanation
+# 🔹 Greedy (<.*>)
+
+# Meaning: Matches as much text as possible
+
+# It expands the match until the last possible >.
+
+# import re
+# text = "<a><b>"
+# print(re.findall(r"<.*>", text))
+
+# Output:
+
+# ['<a><b>']
+
+# Why?
+# .* consumes everything between the first < and the last >.
+# 🔹 Lazy / Non-Greedy (<.*?>)
+
+# Meaning: Matches as little text as possible
+
+# Stops at the first valid >
+
+
+# import re
+# text = "<a><b>"
+# print(re.findall(r"<.*?>", text))
+
+# Output:
+
+# ['<a>', '<b>']
+
+# Why?
+# *? tells regex: "Take the shortest match that still works."
+
+# ⚠️ Practical Tip (Automation / Log Parsing)
+
+# Use lazy quantifiers when extracting multiple tags, fields, or patterns
+
+# Use greedy only when you are sure the pattern occurs once
+
+#Extract words ≥ 4 letters
+# print(re.findall(r"\b\w{4,}\b", "This regex masterclass")) #['This', 'regex', 'masterclass']
+# # Find repeated characters
+# print(re.findall(r"(.)\1+", "aaabbcddd")) # ['a', 'b', 'd']
+# #Replace multiple spaces
+# print(re.sub(r"\s+", " ", "Hello    World")) # Hello World
+
+
+# ✔ Lesson 3: Anchors
+# Anchor	Meaning
+# ^	start
+# $	end
+# \b	word boundary
+# \B	non-boundary
+
+# print(re.search(r"^Hello", "Hello World")) # <re.Match object; span=(0, 5), match='Hello'>
+# print(re.search(r"\.com$", "google.com"))  # <re.Match object; span=(6, 10), match='.com'>
+
+# Words starting with 'a'
+# print(re.findall(r"\ba\w*", "an apple and ant")) ##['an', 'apple', 'and', 'ant']
+
+# ✔ Match ending with .com
+# print(re.search(r"\.com$", "site.com")) #<re.Match object; span=(4, 8), match='.com'>
+#✔ Whole-word match
+# print(re.findall(r"\bcat\b", "cat scatter")) # ['cat']
+
+
+# MODULE 4 — GROUPS & CAPTURING
+
+print(re.findall(r"(\d{2})/(\d{2})/(\d{4})", "12/12/2025")) # [('12', '12', '2025')]
+
+
+
+
+
+
+
