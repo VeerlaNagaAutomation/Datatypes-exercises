@@ -1,3 +1,40 @@
+lst = [89,-2,78,67,90,-3,-97,98,786,678,56]
+# lst.sort() # sort at in place
+# print(lst) #[-97, -3, -2, 56, 67, 78, 89, 90, 98, 678, 786]
+# l1=sorted(lst) # creates new list
+# print(l1)  # [-97, -3, -2, 56, 67, 78, 89, 90, 98, 678, 786]
+
+# lst.reverse() #inplace reverse
+# print(lst) # [56, 678, 786, 98, -97, -3, 90, 67, 78, -2, 89]
+
+# l1=reversed(lst)
+# print(l1) #<list_reverseiterator object at 0x7c67db77dbd0>
+
+# l1=list(reversed(lst)) ##must mention list###
+# print(l1) #[56, 678, 786, 98, -97, -3, 90, 67, 78, -2, 89]
+
+# s = lst[::-1]
+# print(s) # [56, 678, 786, 98, -97, -3, 90, 67, 78, -2, 89]
+
+ 
+# reverse without builtins
+# l1=[ ]
+# for i in range(len(lst)-1,-1,-1):
+#     l1.append(lst[i])
+# print(l1)     #[56, 678, 786, 98, -97, -3, 90, 67, 78, -2, 89]
+# #==========================
+#sort without builtins # Bubblesort O(n*2) because nested for loop
+# n = len(lst)
+# for i in range(n):
+#     for j in range(n-i-1):
+#         if lst[j] > lst[j+1]:
+#             lst[j],lst[j+1] = lst[j+1],lst[j]
+# print(lst)
+#=================================
+
+
+
+#============================================
 lst = [1, 0, 7, 0, 4, 0, 5, 0]
 pos=0
 for i in lst:
@@ -55,6 +92,28 @@ for i in arr:
     else:
         l1.append(i)
 print(l1) #[1, 2, 3, 4, 5, 6, 7, 8, 10, 9]
+## revwesr for above
+##M1
+a = [1,2,3,4,5,6]
+# out: [[1, 2], [3, 4], [5, 6]]
+out = [ ]
+k = 2
+for i in range(0,len(a),k):
+    temp = [ ]
+    for j in range(i,i+k):
+        temp.append(a[j])
+    out.append(temp)    
+print(out)  ## [[1, 2], [3, 4], [5, 6]]
+##M2=================================
+a = [1,2,3,4,5,6] ## #follow this only single loop###
+# out: [[1, 2], [3, 4], [5, 6]]
+out = [ ]
+k = 2
+for i in range(0,len(a),k):
+    out.append(a[i:i+k])
+print(out)    ## [[1, 2], [3, 4], [5, 6]]
+
+## ====================================
 
 ##========================================
 arr = [2,[4,[4,[5,[7]]]],8,9]
@@ -69,7 +128,7 @@ flatten(arr)
 print(l1)  # [2, 4, 4, 5, 7, 8, 9]
 ## Reverse of above===========
 a = [2, 4, 4, 5, 7, 8, 9]
-output = [2,[4,[4,[5,[7]]]],8,9]
+output = [2,[4,[4,[5,[7]]]],8,9]   ####  By heart ###
 
 nested = a[4]  # start with last element of nested part
 
@@ -81,28 +140,8 @@ output = [a[0],nested] + a[5:]
 print(output)
 
 ##========================================
-##M1
-a = [1,2,3,4,5,6]
-# out: [[1, 2], [3, 4], [5, 6]]
-out = [ ]
-k = 2
-for i in range(0,len(a),k):
-    temp = [ ]
-    for j in range(i,i+k):
-        temp.append(a[j])
-    out.append(temp)    
-print(out)  ## [[1, 2], [3, 4], [5, 6]]
-##M2=================================
-a = [1,2,3,4,5,6]
-# out: [[1, 2], [3, 4], [5, 6]]
-out = [ ]
-k = 2
-for i in range(0,len(a),k):
-    out.append(a[i:i+k])
-print(out)    ## [[1, 2], [3, 4], [5, 6]]
 
-## ====================================
-
+## Sort by useing 2nd element in the in the tuple
 a = [(1,6),(4,2),(9,7),(3,9),(8,8),(11,1)]
 
 n = len(a)
@@ -127,3 +166,169 @@ for i in a:
         if abs(i-j) == k:
             pairs.append((i,j))
 print(pairs)  
+
+#==============================================
+# 17.What will be the output of 
+list1 = [1, [2, 3]] 
+list1.append([0]) 
+list1.extend([6]) 
+print(list1) ##[1, [2, 3], [0], 6]
+#=============================================
+
+#=====================================================
+list1 = [1,2,3,3,4,55,5,5,6]
+
+l1=[]
+for i in list1:
+    if i not in l1:
+        l1.append(i)
+print(l1)
+l2=[]
+
+for j in range(len(l1)-1,-1,-1):
+    l2.append(l1[j])
+print(l2)
+
+max_val = 0
+sec_max = 0
+for k in l2:
+    if k > max_val:
+        max_val = k
+for j in l2:
+    if j < max_val and j > sec_max:
+        sec_max = j
+        
+print(max_val) 
+print(sec_max)
+#===========================================================
+# lst = [89,-2,78,67,90,-3,-97,98,786,678,56]  
+# n = len(lst)
+# for i in range(n):
+#     for j in range(n-i-1):
+#         if lst[j] > lst[j+1]:
+#             lst[j],lst[j+1] = lst[j+1],lst[j]
+# print(lst) # sorted list
+# ## suppose when enter n= 1 max num should come, n=2 se_max will come so on... ----AMD
+# n = int(input('Enter the number'))
+# n = lst[-n]
+# print(n)
+# Enter the number1
+# 786
+##===================
+# 18.From a given list k = [1,1,1,1,2,2,2,2,3,3,3,3,4,1], find the number of times m = 2 occurred.
+
+k = [1,1,1,1,2,2,2,2,3,3,3,3,4,1]
+#M1
+count = k.count(2)
+print(count)
+  ##========================#
+  #M2
+c=0
+for i in k:
+    if i == 2:
+        c+=1
+print(c)  
+#=====================================
+21.How to split a given dictionary of lists into a list of dictionaries using the map function?
+
+data = {
+    "id":    [1, 2, 3],
+    "name":  ["Alice", "Bob", "Charlie"],
+    "age":   [25, 30, 35]
+}
+
+result = list(map(lambda values: dict(zip(data.keys(), values)),zip(*data.values())))
+
+print(result)
+#op
+[{'id': 1, 'name': 'Alice', 'age': 25}, {'id': 2, 'name': 'Bob', 'age': 30}, {'id': 3, 'name': 'Charlie', 'age': 35}]
+
+🔍 Explanation (Interview-friendly)
+
+data.values() → gets all lists
+
+zip(*data.values()) → groups elements index-wise
+
+(1, 'Alice', 25), (2, 'Bob', 30), (3, 'Charlie', 35)
+
+
+map() → converts each tuple into a dictionary
+
+dict(zip(keys, values)) → creates individual dictionaries
+#===============================================
+
+# Dictionary to list
+Dict = {
+    1: "jessa",
+    2: ["abcd", "efgh", "ijkl"],
+    3: "hello",
+    4: {5: "five", 6: "six"}
+}
+
+result = []
+
+for key in Dict:
+    value = Dict[key]  ### BY HEART ###
+
+    # if value is a list
+    if isinstance(value, list):
+        for item in value:
+            result.append(item)
+
+    # if value is a dictionary
+    elif isinstance(value, dict):
+        for k in value:
+            result.append(value[k])  ###By heart 
+
+    # if value is a single element (string/int)
+    else:
+        result.append(value)
+
+print(result) #['jessa', 'abcd', 'efgh', 'ijkl', 'hello', 'five', 'six']
+#================================================================================
+##34.Validate palindromes from a list and append them to a dictionary.
+
+def is_palindrome(s):
+    left, right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+words = ["madam", "python", "level", "radar", "test", "noon"]
+result = {"palindromes": []}
+
+for word in words:
+    if is_palindrome(word):
+        result["palindromes"].append(word)
+
+print(result)  ##{'palindromes': ['madam', 'level', 'radar', 'noon']}
+
+
+#===========================================================================================
+
+## 2d Array
+
+
+
+##list to 3x3 matrix
+
+
+
+##Linkedlist,
+single
+double
+circular single
+circular double
+
+#linkedlist traversal
+
+
+##trees, 
+
+
+##stack.
+
+
