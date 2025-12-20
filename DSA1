@@ -1,0 +1,237 @@
+Below is a curated list of the MOST-ASKED Python DSA interview questions, based on real interviews (Intel / Qualcomm / AMD / NVIDIA / product companies).
+I’ve grouped them by topic + priority, so you know what to prepare first.
+
+🔴 MUST-KNOW (Asked in almost every interview)
+1️⃣ Arrays / Lists
+
+Reverse an array in-place
+
+Find largest / smallest / second largest element
+
+Move all zeros to end (in-place)
+
+Rotate array by k steps
+
+Find missing number in 1…N
+
+Check if array is sorted
+
+Remove duplicates from sorted array
+
+Maximum sum subarray (Kadane’s Algorithm)
+
+Find pair with given sum
+
+Find duplicates in an array
+
+2️⃣ Strings
+
+Reverse a string (with & without built-in)
+
+Check palindrome
+
+Check anagram
+
+Count character frequency
+
+First non-repeating character
+
+Longest substring without repeating characters
+
+Reverse words in a sentence
+
+Check if one string is rotation of another
+
+Remove duplicates from string
+
+Longest common prefix
+
+3️⃣ Searching & Sorting
+
+Binary search (iterative + recursive)
+
+Find first & last occurrence of element
+
+Search in rotated sorted array
+
+Bubble / Selection / Insertion sort
+
+Merge sort (concept + code)
+
+Quick sort (partition logic)
+
+Find kth largest/smallest element
+
+Count occurrences using binary search
+
+🟠 VERY FREQUENT (Strong signal questions)
+4️⃣ Hashing (Dict / Set)
+
+Two Sum problem
+
+Count frequency of elements
+
+Find duplicates using set
+
+Longest consecutive sequence
+
+Check if two arrays are equal
+
+Subarray with zero sum
+
+Majority element (Boyer–Moore)
+
+5️⃣ Sliding Window / Two Pointers 🔥
+
+Largest sum subarray of size K
+
+Smallest subarray with sum ≥ target
+
+Longest substring with K distinct characters
+
+Move zeros / segregate even-odd
+
+Container with most water
+
+Trapping rain water
+
+Pair with target sum (sorted array)
+
+👉 Interview favorite topic
+
+🟡 LINKED LIST (Common for 4–6 yrs)
+
+Reverse a linked list
+
+Detect loop (Floyd’s cycle)
+
+Find middle of linked list
+
+Merge two sorted linked lists
+
+Remove nth node from end
+
+Check palindrome linked list
+
+Intersection point of two lists
+
+🟢 STACK & QUEUE
+Stack
+
+Valid parentheses
+
+Reverse string using stack
+
+Next greater element
+
+Min stack design
+
+Evaluate postfix expression
+
+Queue
+
+Implement queue using stack
+
+Circular queue
+
+Sliding window maximum
+
+First non-repeating character in stream
+
+🔵 RECURSION (Interview clarity test)
+
+Factorial
+
+Fibonacci
+
+Reverse string using recursion
+
+Generate all subsets
+
+Generate permutations
+
+Tower of Hanoi
+
+Check palindrome recursively
+
+🟣 TREE & BST (Asked in Product Companies)
+
+Tree traversals (In / Pre / Post)
+
+Height of binary tree
+
+Check balanced binary tree
+
+Diameter of binary tree
+
+Lowest Common Ancestor
+
+Level order traversal
+
+Validate BST
+
+Invert binary tree
+
+🔶 DYNAMIC PROGRAMMING (Tough but High Value)
+
+Fibonacci using DP
+
+Climbing stairs
+
+Coin change
+
+Longest common subsequence
+
+Longest increasing subsequence
+
+Knapsack (0/1)
+
+Subset sum
+
+Edit distance
+
+⚫ Python-Specific DSA Questions (Very Important)
+
+Time & space complexity of list, dict, set
+
+list vs tuple
+
+deepcopy vs shallow copy
+
+== vs is
+
+Mutable vs immutable
+
+Why dict lookup is O(1)
+
+How hashing works internally
+
+Python recursion limit
+
+collections.Counter use cases
+
+Sorting using custom key
+
+🎯 MOST COMMON INTERVIEW PATTERNS
+
+If you master these, 70–80% DSA rounds are covered
+
+✅ Sliding Window
+✅ Two Pointers
+✅ Hashing
+✅ Binary Search
+✅ Recursion → DP conversion
+
+🚀 Recommended Interview Prep Order (30-Day)
+
+Days 1–7 → Arrays + Strings
+
+Days 8–12 → Hashing + Sliding Window
+
+Days 13–17 → Linked List + Stack
+
+Days 18–22 → Trees
+
+Days 23–26 → DP
+
+Days 27–30 → Mock interviews + revision
