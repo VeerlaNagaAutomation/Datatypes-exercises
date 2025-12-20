@@ -4,6 +4,158 @@ I’ve grouped them by topic + priority, so you know what to prepare first.
 🔴 MUST-KNOW (Asked in almost every interview)
 1️⃣ Arrays / Lists
 
+###########################
+def fib(n):
+    a,b = 0,1
+    for i in range(n):
+        print(a,end=' ')
+        a,b = b,a+b
+num = int(input('Enter the number'))
+fib(num)
+op:
+0 1 1 2 3 5 8 13 21 34 
+#############################
+#ge_fib  ---https://www.programiz.com/online-compiler/3dI8QTnkVh3vB
+########################
+def fib(n):
+   a,b = 0,1
+   c = 0
+   while c <= n:
+       yield a
+       a,b = b,a+b
+       c+=1
+num = int(input('Enter the number'))
+it = fib(num)
+print(it.__next__())
+print(it.__next__())
+print(next(it))
+for i in it:
+    print(i)
+op:
+Enter the number10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+#######################
+def re_fib(n):
+    if n == 0:
+        return n
+    elif n == 1:
+        return n
+    else:
+        return re_fib(n-1)+ re_fib(n-2)
+num = int(input('Enter the number'))
+for i in range(num):
+    print(re_fib(i),end=' ')
+op:
+0 1 1 2 3 5 8 13 21 34 
+######################
+def fact(n):
+    result = 1
+    while n > 1:
+        result = result * n
+        n-= 1
+    return result
+num = int(input("Enter the number"))
+print(f'factorial of a given {num} is {fact(num)}')
+
+def re_fact(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return n
+    else:
+        return re_fact(n-1)*n
+num = int(input("Enter the number"))
+print(f'factorial of a given {num} is {re_fact(num)}')
+op:
+Enter the number5
+factorial of a given 5 is 120
+#########################
+n = int(input('Enter the number'))
+for i in range(1,n+1):
+    if n%i == 0:
+        print(i)
+################################        
+# prime factors
+n = int(input('Enter the number'))
+num = n
+factors=[ ]
+i = 2
+while n > 1:
+    if n%i == 0:
+        factors.append(str(i))
+        n = n//i
+    else:
+        i+=1
+print(factors)        
+print(f'{num} = {'X'.join(factors)}')
+op:
+# Enter the number12
+# ['2', '2', '3']
+# 12 = 2X2X3
+#############################################
+# Angustrome number
+n = int(input('Enter the number'))
+num = n
+sum = 0
+d = len(str(n))
+while n!=0:
+    r = n%10
+    sum=sum+r**d
+    n = n//10
+if num == sum:
+    print("A")
+else:
+    print("Not A")
+# op:
+# Enter the number153
+# A
+######################################
+#Prime number
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n == 2:
+        return True
+    elif n%2 == 0:
+        return False
+    else:
+        for i in range(3,int(n**0.5)+1,2):
+            if n%i == 0:
+                return False
+        return True
+n = int(input('Enter the number'))        
+if is_prime(n):
+    print("Prime")
+else:
+    print("Not a prime")
+#op
+#Enter the number101
+#Prime
+#########################################
+#FizzBuzz
+for num in range(1,101):
+    if num%3 == 0 and num%5 == 0:
+        print('FizzBuzz')
+    elif num%3 == 0:
+        print('Fizz')
+    elif num%5 == 0:
+        print('Buzz')
+    else:
+        print(num)
+
+#########################
+
+
 Reverse an array in-place
 
 Find largest / smallest / second largest element
