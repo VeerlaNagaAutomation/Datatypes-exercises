@@ -324,8 +324,130 @@ op:
 # print(out)
 # op:4a3b2c1z
 ################################
+s = 'my nane is nane and nane of mine is nane'
+# ss=s.replace('nane','name')
+# print(ss)
+#op:my name is name and name of mine is name
+ss = s.split()
+out=''
+for i in ss:
+    if i == 'nane':
+        out=out+'name'+' '
+    else:
+        out=out+i+' '
+# print(out)        
+# #op:my name is name and name of mine is name
 
+# Common words in a 2 strings
+s11 = "python automation debug embedded"
+s22 = "automation python validation protocols"
+l1=[]
+s1 = s11.split()
+s2 = s22.split()
 
+for i in s1:
+    for j in s2:
+        if i == j and i not in l1:
+            l1.append(i)
+print(l1)
+
+# common chars in 2 strings
+
+s1 = 'naina'
+s2 = 'reena'
+
+s1=set(s1) # {'i', 'a', 'n'}
+s2=set(s2) # {'a', 'r', 'e', 'n'}
+s3=set()
+print(s1)
+print(s2)
+for i in s1:
+    if i in s2:
+        s3.add(i)
+print(s3)   # {'n', 'a'}  
+#################################################
+# Counting frequency of words in a string out put in dictionary form
+s = 'seena loves eating apple her sister also loves eating apple and mango'
+ss=s.split()
+freq={}
+for word in ss:
+    if word not in freq:
+        freq[word] = 1
+    else:
+        freq[word]+=1
+print(freq)        
+# op:
+# {'seena': 1, 'loves': 2, 'eating': 2, 'apple': 2, 'her': 1, 'sister': 1, 'also': 1, 'and': 1, 'mango': 1}    
+###########################################################
+# frequency of a first non repaeting char
+
+def fre(s):
+    freq={}
+    for ch in s:
+        if ch not in freq:
+            freq[ch] = 1
+        else:
+            freq[ch]+=1
+    for i in s:
+        if freq[ch] == 1:
+            return ch
+s ='array'
+print(fre(s))
+# op: y
+
+#max and 2nd max repeating chars
+s = 'Naabbbc'
+freq = {}
+
+for ch in s:
+    if ch not in freq:
+        freq[ch] = 1
+    else:
+        freq[ch] += 1
+
+max_freq = 0
+max_char = None
+for ch in freq:
+    if freq[ch] > max_freq:
+        max_freq = freq[ch]
+        max_char = ch
+
+sec_max = 0
+sec_char = None
+for ch in freq:
+    if freq[ch] < max_freq and freq[ch] > sec_max:
+        sec_max = freq[ch]
+        sec_char = ch
+
+print("Most frequent:", max_char, max_freq)
+print("Second most frequent:", sec_char, sec_max)
+# op:
+# Most frequent: b 3
+# Second most frequent: a 2    
+
+#######################################################
+#anagrames
+def anagrames(s1,s2):
+    if len(s1) != len(s2):
+        return False
+    freq={}    
+    for ch in s1:
+        if ch in freq:
+            freq[ch]+=1
+        else:
+            freq[ch]=1
+    for ch in s2:
+        if ch in freq:
+            freq[ch]-=1
+    for value in freq.values():
+        if value != 0:
+            return False
+    return True 
+print(anagrames("listen","silent"))  
+# op: True
+##########################################
+
+###################################
 Reverse an array in-place
 
 Find largest / smallest / second largest element
