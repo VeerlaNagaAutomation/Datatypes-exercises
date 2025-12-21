@@ -198,6 +198,8 @@ def longest_palindrome(s):
     return longest
 s = 'Boopathi'    
 print(longest_palindrome(s)) 
+op:
+oo
 ##############################################
 def lon_substring_with_repeating_char(s):
     l=0
@@ -222,9 +224,106 @@ def lon_substring_with_repeating_char(s):
             return sub,res
 
 print(lon_substring_with_repeating_char('abcabcbb'))    
+op:
+('abc', 3)
+
+###############################
+# def re_string(s):
+#     res=''
+#     for ch in s:
+#         res = ch +res
+#     return res
+# print(re_string('I have a car'))    
+ 
+# s ='I have a car'    
+# i = len(s)-1
+# out=''
+# while i>=0:
+#     out=out+s[i]
+#     i-=1
+# print(out) 
+# op:
+# rac a evah I
+
+# ss=s[::-1]
+# print(ss)
+# op: rac a evah I
+
+#output = 'car a have I'
+
+# ss = s.split()
+
+# out=ss[::-1]
+
+# output = ' '.join(ss)
+# print(output)
+#I have a car
+# s ='I have a car' 
+# words =[ ]
+# temp=''
+# for ch in s:
+#     if ch !=' ':   # space forgot in ' '
+#         temp+= ch
+#     else:
+#         words.append(temp)
+#         temp=''
+# words.append(temp)
+# print(words)
+
+# re_words=[]
+# for i in range(len(words)-1,-1,-1):
+#     re_words.append(words[i])
+# print(re_words)
+
+# out=''
+# for ch in re_words:
+#     out+=ch+' '
+# out.strip()    
+# print(out)    
 
 
-#############################
+# same place word reverse
+# s ='I have a car' 
+# # out = 'I evah a rac'
+
+# l1=[]
+# ss=s.split()
+# for i in ss:   #looping s insted of ss
+#     l1.append(i[::-1])
+# out=' '.join(l1)
+# print(out)
+#I evah a rac
+
+# s='a4b2c3'
+# out=''
+# for ch in s:
+#     if ch.isalpha():
+#         x = ch
+#     else:
+#         d = int(ch)
+#         out=out+d*x
+# print(out)  
+# op: aaaabbccc
+
+# s ='aaaabbbccz'
+# out=''
+# i=1
+# c=1
+# previous=s[0]
+# while i < len(s):
+#     if s[i] == previous:
+#         c+=1
+#     else:
+#         out=out+str(c)+previous
+#         previous = s[i]
+#         c=1
+#     if i == len(s)-1:
+#         out=out+str(c)+previous
+#     i=i+1
+
+# print(out)
+# op:4a3b2c1z
+################################
 
 
 Reverse an array in-place
