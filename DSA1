@@ -528,6 +528,18 @@ Majority element (Boyer–Moore)
 5️⃣ Sliding Window / Two Pointers 🔥
 
 Largest sum subarray of size K
+nums = [1,2,3,4,5,6]
+k=4
+curr_sum = 0
+for i in range(k):
+    curr_sum+=nums[i]
+max_sum = 0
+for i in range(k,len(nums)):
+    curr_sum+= -nums[i-k] + nums[i]
+    if curr_sum > max_sum:
+        max_sum = curr_sum
+print(max_sum)    
+# op: 18 
 
 Smallest subarray with sum ≥ target
 
