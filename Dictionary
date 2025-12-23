@@ -1,0 +1,17 @@
+emp ={
+    "A":{'age': 30, 'pos':'Manager'}, 
+    'B':{'age': 25, 'pos':'Dev'}, 
+    "C":{'age':28, 'pos':'Des'}
+}
+
+
+
+emp["D"] = {'age': 29, 'pos': 'des'}
+print(emp['B'])    
+print(emp['B']['pos'])
+print(emp)
+
+op:
+{'age': 25, 'pos': 'Dev'}
+Dev
+{'A': {'age': 30, 'pos': 'Manager'}, 'B': {'age': 25, 'pos': 'Dev'}, 'C': {'age': 28, 'pos': 'Des'}, 'D': {'age': 29, 'pos': 'des'}}
