@@ -10,8 +10,25 @@ emp["D"] = {'age': 29, 'pos': 'des'}
 print(emp['B'])    
 print(emp['B']['pos'])
 print(emp)
+for k,v in emp.items():
+    print(k)
+    for i, j in v.items():
+        print(i, j)
 
 op:
 {'age': 25, 'pos': 'Dev'}
 Dev
 {'A': {'age': 30, 'pos': 'Manager'}, 'B': {'age': 25, 'pos': 'Dev'}, 'C': {'age': 28, 'pos': 'Des'}, 'D': {'age': 29, 'pos': 'des'}}
+
+A
+age 30
+pos Manager
+B
+age 25
+pos Dev
+C
+age 28
+pos Des
+D
+age 29
+pos des
