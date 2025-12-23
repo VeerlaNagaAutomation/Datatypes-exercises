@@ -1,0 +1,42 @@
+
+
+def argdemo(*args):
+    for arg in args:
+        print(arg)
+    
+
+def kwargdemo(**kwargs):
+    for k, v in kwargs.items():
+        print(k,v)
+
+
+argdemo(1,2,3,4,5, "hello", "world")
+kwargdemo(a =  '1', b ='2')
+
+op:
+1
+2
+3
+4
+5
+hello
+world
+a 1
+b 2
+#####################################################
+# convert a characters into string adn vice versa
+
+
+# string to characters
+s = "hello world"
+s_l = []
+for i in s:
+    s_l.append(i)
+    
+print(s_l)
+
+
+# list of characters to string
+s_j = ''.join(s_l)
+print(s_j)
+
