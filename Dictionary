@@ -32,3 +32,37 @@ pos Des
 D
 age 29
 pos des
+
+#################################
+"Merged the below dictionary:
+dict1={1:10, 2:20}
+dict2={3:30, 4:40}
+dict3={5:50,6:60}
+Expecting Output:
+{1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}"
+
+from  collections import Counter
+
+dict1={1:10, 2:20}
+dict2={3:30, 4:40}
+dict3={4:20,5:50,6:60}
+
+
+merg = Counter(dict1) + Counter(dict2) + Counter(dict3)
+
+print(merg)
+op:
+Counter({4: 60, 6: 60, 5: 50, 3: 30, 2: 20, 1: 10})
+##################################
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+Expecting Output:
+{1: 4, 2: 5, 3: 6}
+
+tup1 = (1,2,3)
+tup2 = (4,5,6)
+
+dic = dict(zip(tup1, tup2))
+print(dic)
+#################################
+
