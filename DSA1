@@ -446,7 +446,60 @@ def anagrames(s1,s2):
 print(anagrames("listen","silent"))  
 # op: True
 ##########################################
+def len_lon_sub_string(s):
+    l = 0
+    res = 0
+    set1 = set()
+    sub = ""
+    for r in range(len(s)):
+        if s[r] not in set1:
+            set1.add(s[r])
+        else:
+            while s[r] in set1:
+                set1.remove(s[l])
+                l+=1
+            set1.add(s[r])
+        if r-l+1 > res:
+            res = r-l+1
+            sub = s[l:r+1]
+    return res,sub
+print(len_lon_sub_string('abcabcaa')) 
+op:
+(3, 'abc')
+explanation:
+🧠 Approach (How I solved it)
 
+I solved this using the sliding window technique with two pointers and a set.
+
+I maintain two pointers:
+
+l → start of the window
+
+r → end of the window
+
+I use a set to track unique characters in the current window.
+
+🔄 Logic Flow (Explain while drawing on paper)
+
+I expand the window by moving r.
+
+If the current character is not in the set, I add it.
+
+If a duplicate appears:
+
+I shrink the window from the left (l)
+
+Remove characters until the duplicate is gone
+
+After every step, I update:
+
+Maximum length
+
+Corresponding substring
+
+🧩 Why Sliding Window?
+
+Because checking all substrings would take O(n²), but sliding window allows me to solve it in O(n).
 ###################################
 Reverse an array in-place
 
