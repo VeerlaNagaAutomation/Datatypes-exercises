@@ -78,6 +78,30 @@ for i in range(len(lst)):
 
 print(lst)  ## [0, 0, 0, 0, 4, 7, 5, 1]
 
+###
+for above with changing the order
+lst = [1, 0, 7, 0, 4, 0, 5, 0]
+
+# 1. count zeros
+zero_count = 0
+for x in lst:
+    if x == 0:
+        zero_count += 1
+
+# 2. shift non-zeros to the right (backward traversal)
+idx = len(lst) - 1
+for i in range(len(lst) - 1, -1, -1):
+    if lst[i] != 0:
+        lst[idx] = lst[i]
+        idx -= 1
+
+# 3. fill zeros at front
+for i in range(zero_count):
+    lst[i] = 0
+
+print(lst) # [0, 0, 0, 0, 1, 7, 4, 5]
+
+
 ## =====================================
 l1 = [ ]
 l2= [ ]
@@ -122,7 +146,22 @@ for i in range(0,len(a),k):
 print(out)    ## [[1, 2], [3, 4], [5, 6]]
 
 ## ====================================
+###################################
 
+a = [1, 2, 3, 4, 5, 6, 7, 8, 10, 9]
+out=[] # [[1,2],[3,4],[5,6],[7,8],10,9]
+k=2
+
+for i in range(0,len(a),k):
+    if i < 8:    
+        out.append(a[i:i+k])
+    else:
+        out.extend(a[i:])
+
+print(out)     # [[1, 2], [3, 4], [5, 6], [7, 8], 10, 9]
+
+
+##########################################
 ##========================================
 arr = [2,[4,[4,[5,[7]]]],8,9]
 l1 = [ ]
