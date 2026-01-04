@@ -167,6 +167,7 @@ if is_palin(s):
     print('Palin')
 else:
     print('Not a Palin')
+#############################################
 without builtin palindrome
 word = input('Enter the word')
 is_palindrome = True
@@ -183,6 +184,36 @@ if is_palindrome:
     print('Palin')
 else:
     print('Not a palin')
+############################################
+def palinmodifier(f1):
+    def inner(s):
+        out=''
+        s = s.lower()
+        for ch in s:
+            if ch.isalpha():
+                out = out + ch
+                s=out
+        return f1(s)
+    return inner    
+
+@palinmodifier
+def is_palin(s):
+    is_palindrome = True
+    start = 0
+    end = len(s)-1
+    while start < end:
+        if s[start] != s[end]:
+            is_palindrome = False
+            break
+        else:
+            start+=1
+            end-=1
+    if is_palindrome:
+        print("Palin")
+    else:
+        print('Not a Palin')
+s = "No lemon, no melon."        
+is_palin(s)   ## https://www.programiz.com/online-compiler/9vpIcvmTdanec
 #############################################
 def longest_palindrome(s):
     def expand(left,right):
