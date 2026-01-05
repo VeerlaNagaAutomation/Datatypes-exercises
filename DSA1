@@ -233,26 +233,29 @@ op:
 oo
 ##############################################
 def lon_substring_with_repeating_char(s):
-    l=0
-    res=0
-    set1=set()
-    sub=' '
+   def len_lon_sub(s):
+    l = 0
+    res = 0
+    set1 = set()
+    sub = ""
+
     for r in range(len(s)):
         if s[r] not in set1:
             set1.add(s[r])
-            if r-l+1 > res:
-                res = r-l+1
-                sub = s[l:r+1]
-        else:        
+        else:
             while s[r] in set1:
                 set1.remove(s[l])
-                l+=1
-            s[r] not in set1    
-            set1.add(s[r])
-            if r-l+1 > res:
-                res = r-l+1
-                sub = s[l:r+1]
-            return sub,res
+                l += 1
+            set1.add(s[r])   # add after removing duplicates
+
+        if r - l + 1 > res:
+            res = r - l + 1
+            sub = s[l:r+1]
+
+    return res, sub
+
+print(len_lon_sub('abcabcbb'))
+
 
 print(lon_substring_with_repeating_char('abcabcbb'))    
 op:
@@ -275,7 +278,22 @@ op:
 # print(out) 
 # op:
 # rac a evah I
+#################################
+s = 'I have a car'
+import sys
+import logging
 
+out = ''
+i = len(s) - 1
+while i >= 0:
+    out = out + s[i]
+    i -= 1
+
+logging.basicConfig(level=logging.INFO)
+logging.info(out)
+
+# sys.stdout.write(out)
+#################################
 # ss=s[::-1]
 # print(ss)
 # op: rac a evah I
