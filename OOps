@@ -1,0 +1,77 @@
+##########################################################
+✅ 2️⃣ Duck Typing (Very Simple)
+
+👉 Python cares about method, not class
+
+class Dog:
+    def sound(self):
+        print("Bark")
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+def make_sound(animal):
+    animal.sound()
+
+make_sound(Dog())
+make_sound(Cat())
+
+✅ Output
+Bark
+Meow
+
+🧠 One-line Explanation
+
+If an object has the required method, Python uses it—class type doesn’t matter.
+
+
+
+########################################################
+✅ Correct Way to Use super() (VERY IMPORTANT)
+✔ Call super() inside the overridden method
+class Parent:
+    def show(self):
+        print("This is Parent")
+
+class Child(Parent):
+    def show(self):
+        super().show()        # call parent method
+        print("This is Child")
+
+obj = Child()
+obj.show()
+
+✅ Output
+This is Parent
+This is Child
+
+🧠 Simple Explanation (Interview Style)
+
+super() is used inside a child class method to call the parent class implementation of the same method.
+
+🔑 Key Rules of super() (Memorize)
+
+❌ Cannot be used outside class
+
+✅ Must be inside a child method
+
+✅ Used to call parent method
+
+✅ Avoids hardcoding parent class name
+
+❌ Wrong vs ✅ Right (Quick Compare)
+
+❌ Wrong
+
+super().show()
+
+
+✅ Right
+
+def show(self):
+    super().show()
+
+🎯 One-Line Interview Answer
+
+super() is used inside a child class method to access parent class methods and supports method overriding in polymorphism.
