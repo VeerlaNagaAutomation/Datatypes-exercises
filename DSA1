@@ -260,6 +260,32 @@ print(len_lon_sub('abcabcbb'))
 print(lon_substring_with_repeating_char('abcabcbb'))    
 op:
 ('abc', 3)
+############################
+✅ Method 1: Print in reverse (NO temp variable, NO built-ins)
+s = 'I have a car'
+
+i = len(s) - 1
+while i >= 0:
+    print(s[i], end='')
+    i -= 1
+Output
+rac a evah I
+
+
+✔ No temporary variable
+✔ No built-in reverse / slicing
+✔ Very common interview-accepted solution
+
+✅ Method 2: Recursive print (no temp, no built-ins)
+def reverse_print(s, i):
+    if i < 0:
+        return
+    print(s[i], end='')
+    reverse_print(s, i - 1)
+
+s = 'I have a car'
+reverse_print(s, len(s) - 1)
+############################
 
 ###############################
 # def re_string(s):
