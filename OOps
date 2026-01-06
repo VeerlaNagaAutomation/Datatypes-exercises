@@ -1,3 +1,28 @@
+How to print class name of class
+
+class Test:
+    pass
+
+print(Test.__name__) # Test
+#######
+by useing object:
+class Test:
+    pass
+
+obj = Test()
+print(obj.__class__.__name__) # Test
+
+__class__ gives the class of the object, and __name__ gives the class name.
+
+############
+✅ 3. Using type() (Very common in interviews)
+class Test:
+    pass
+
+obj = Test()
+print(type(obj).__name__) #Test
+
+
 ##########################################################
 ✅ 2️⃣ Duck Typing (Very Simple)
 
@@ -180,3 +205,85 @@ Use .mro() to debug issues
 
 In multiple inheritance, super() follows the Method Resolution Order (MRO) to ensure each parent method is called once. Python uses C3 linearization to determine this order, preventing duplicate calls and resolving the diamond problem.
 #################################
+✅ Dunder Functions — Interview Definition (Simple & Crisp)
+
+Dunder (double underscore) functions are special methods in Python that start and end with __ and are automatically invoked by Python to define or customize the behavior of objects with built-in operations like object creation, printing, comparison, and arithmetic.
+
+# Dunder functions
+# 4. __add__ → Addition (+)
+class Number:
+    def __init__(self,x):
+        self.x = x
+    
+    def __add__(self,other):
+        return self.x + other.x
+a = Number(10)
+b = Number(20)
+print(a+b)  # 30
+
+# 5️⃣ __eq__ → Equality (==)
+
+class Test:
+    def __init__(self,x):
+        self.x = x
+    def __eq__(self,other):
+        return self.x == other.x
+        
+a = Test(5)
+b = Test(5)
+
+print(a==b) # True
+
+6️⃣ __lt__ → Less than (<)
+
+Used for comparisons.
+
+class Test:
+    def __init__(self, x):
+        self.x = x
+
+    def __lt__(self, other):
+        return self.x < other.x
+
+print(Test(3) < Test(5))
+
+
+7️⃣ __del__ → Destructor
+
+Called when object is deleted.
+
+class Demo:
+    def __del__(self):
+        print("Object destroyed")
+
+obj = Demo()
+del obj
+
+
+2️⃣ __str__ → String representation
+
+Called when you use print(object).
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+p = Person("Ram")
+print(p) #Ram
+
+
+3️⃣ __len__ → Length
+
+Called when len() is used.
+
+class MyList:
+    def __len__(self):
+        return 5
+
+obj = MyList()
+print(len(obj)) #5
+
+####################################
