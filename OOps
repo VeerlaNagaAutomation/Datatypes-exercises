@@ -75,3 +75,108 @@ def show(self):
 🎯 One-Line Interview Answer
 
 super() is used inside a child class method to access parent class methods and supports method overriding in polymorphism.
+
+
+##########################
+Below is a clear, simple, interview-ready explanation of super() with Multiple Inheritance and MRO (Method Resolution Order).
+I’ll keep it easy, with small code and step-by-step logic.
+
+🔹 super() with Multiple Inheritance
+📌 Why super() matters here
+
+In multiple inheritance, more than one parent exists.
+super() ensures:
+
+Each class method is called once
+
+Calls follow a well-defined order (MRO)
+
+Avoids duplicate or skipped method calls
+
+✅ Basic Multiple Inheritance Example
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def show(self):
+        super().show()
+        print("B")
+
+class C(A):
+    def show(self):
+        super().show()
+        print("C")
+
+class D(B, C):
+    def show(self):
+        super().show()
+        print("D")
+
+obj = D()
+obj.show()
+
+✅ Output
+A
+C
+B
+D
+
+
+👀 Order looks surprising?
+That’s where MRO comes in.
+
+🔹 What is MRO (Method Resolution Order)?
+📌 Definition (Interview Line)
+
+MRO is the order in which Python searches for a method in a class hierarchy.
+#########################
+🔹 Diamond Problem (Classic Interview Topic)
+     A
+    / \
+   B   C
+    \ /
+     D
+
+
+Without super() → A may run twice
+With super() → A runs once ✔️
+
+✅ Correct Diamond Pattern
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def show(self):
+        super().show()
+        print("B")
+
+class C(A):
+    def show(self):
+        super().show()
+        print("C")
+
+class D(B, C):
+    def show(self):
+        super().show()
+        print("D")
+
+D().show()
+
+🔑 Rules to Remember (Interview Gold)
+
+super() follows MRO
+
+MRO is left-to-right, depth-first
+
+Each method executes once
+
+Always use super() in multiple inheritance
+
+Use .mro() to debug issues
+
+🎯 Perfect Interview Answer (Memorize)
+
+In multiple inheritance, super() follows the Method Resolution Order (MRO) to ensure each parent method is called once. Python uses C3 linearization to determine this order, preventing duplicate calls and resolving the diamond problem.
+#################################
