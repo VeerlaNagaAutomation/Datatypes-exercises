@@ -109,3 +109,42 @@ from functools import reduce
 print(reduce(lambda i,sum :i+sum,lst))  ********** i,sum: i+sum
 
 ##############################################################
+
+
+Q4 - Take position input from the user and using recursive function print Fibonacci series. Program shouldn't allow the user to input to enter any other value apart from integer.
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+# Input validation
+while True:
+    try:
+        pos = int(input("Enter a position (integer only): "))
+        if pos < 0:
+            print("Please enter a non-negative integer.")
+        else:
+            break
+    except ValueError:
+        print("Invalid input! Please enter only an integer.")
+
+
+print("Fibonacci series:")
+for i in range(pos):
+    print(fibonacci(i), end=" ")
+#####################################
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+pos = input("Enter position (integer only): ")
+
+if pos.isdigit():              # ensures only integer input
+    pos = int(pos)
+    for i in range(pos):
+        print(fib(i), end=" ")
+else:
+    print("Invalid input! Please enter an integer only.")
+###############################################################################
