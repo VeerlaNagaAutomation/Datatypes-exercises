@@ -1,4 +1,4 @@
-## Mtatch ---->> matching the string starts with pattern or not
+## Match ---->> matching the string starts with pattern or not
 
 # filename="reports.pdf"
 # # pattern ='[^abc]' # r
