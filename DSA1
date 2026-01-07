@@ -385,7 +385,7 @@ logging.info(out)
 # i=1
 # c=1
 # previous=s[0]
-# while i < len(s):
+# while i < len(s):  ****************************
 #     if s[i] == previous:
 #         c+=1
 #     else:
@@ -463,7 +463,7 @@ def fre(s):
             freq[ch] = 1
         else:
             freq[ch]+=1
-    for i in s:
+    for ch in s:
         if freq[ch] == 1:
             return ch
 s ='array'
