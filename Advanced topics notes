@@ -86,3 +86,26 @@ t2.join()
 Multithreading allows a program to execute multiple threads concurrently to improve performance and responsiveness.
 
 #################################################################
+
+lambda
+
+print((lambda a,b:a+b)(int(input('enter a:')), int(input('enter b:'))))
+
+print((lambda a,b:a+b)(int(input('enter a:')), int(input('enter b:'))))
+
+print((lambda a,b : a if a > b else b) (int(input('Enter a: ')),int(input('Enter b:'))))
+
+print((lambda a,b,c : a if a>b and a>c else b if b>c else c)(int(input('Enter a: ')),int(input('enter b: ')),int(input('enter c: '))))
+
+
+lst = [2,4,5,6,7,8,9,555,6,6,777,88,8]
+
+print(list(filter(lambda i : i%2 == 0,lst)))
+
+print(list(map(lambda i : i*i,lst)))
+
+from functools import reduce
+
+print(reduce(lambda i,sum :i+sum,lst))  ********** i,sum: i+sum
+
+##############################################################
