@@ -22,6 +22,25 @@ class Test:
 obj = Test()
 print(type(obj).__name__) #Test
 
+#########################
+x = 100   # global variable
+
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def show(self):
+        global x        # refer to global x
+        print(x)        # prints global x
+        print(self.value)
+
+o = MyClass(50)
+o.show()
+
+print(x)              # global x
+print(o.value)        # access instance variable
+op:
+
 
 ##########################################################
 ✅ 2️⃣ Duck Typing (Very Simple)
