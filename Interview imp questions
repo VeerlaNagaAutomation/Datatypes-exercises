@@ -1,0 +1,125 @@
+# n = int(input('Enter the number'))
+# num = n
+# d = len(str(n))
+# sum = 0
+# while n!=0:
+#     r = n%10
+#     sum = sum + r**d
+#     n = n//10
+    
+# if sum == num:
+#     print('Armstrong Number')
+# else:
+#     print('Not A armstrong number')
+    
+#################################################   
+
+# while True:
+#     try:
+#         num = int(input('Enter the integer number: '))
+#         print('you entered',num)
+#         break
+#     except ValueError:
+#         print("Invalid input please enter integer only")
+
+######################################################
+# import re
+# s1 = "Python is easy and powerful"
+# s2 = "Python is powerful and popular"
+
+# words1 = set(re.findall(r'\b\w+\b',s1.lower()))
+# words2 = set(re.findall(r'\b\w+\b',s2.lower()))
+
+# common_words = words1 & words2
+
+# print(common_words)
+
+####################################################
+
+# Q1 - Find the common words between STR1 and STR2
+# STR1="Mirafra is a product engineering company located in Bangalore. Karnataka is an industrial state"
+# STR2="Bangalore is in Karnataka. Mirafra has PAN India presence"
+
+# s1=STR1.split()
+# s2=STR2.split()
+
+# common_words=[]
+
+# for i in s1:
+#     for j in s2:
+#         if i == j and i not in common_words:
+#             common_words.append(i)
+# print(common_words)       ## ['Mirafra', 'is', 'in']     
+
+##########################################################
+# Q2 - Remove the duplicate words from the list and print the list.
+# MyList=["Apple","Orange","Pineapple","Guava","Pears","Grapes","Apple","Pears"]
+
+# l1=[ ]
+# for i in MyList:
+#     if i not in l1:
+#         l1.append(i)
+# print(l1)        
+
+################################################
+
+# Q3 - Find the 2nd largest element of the array without using a sorting.
+# MyArr=[4,5,6,7,8,99,2,1,11,9,21,3,20]
+
+# max_val = 0
+# for i in MyArr:
+#     if i > max_val:
+#         max_val = i
+# sec_max = 0
+# for i in MyArr:
+#     if i < max_val and i > sec_max:
+#         sec_max = i
+# print(max_val,sec_max) 
+
+
+############################################################
+
+# """ Q4 - Take position input from the user and using recursive function print Fibonacci series. Program shouldn't allow the user to input to enter any other value apart from integer. """
+
+# def re_fib(n):
+#     if n <= 1:
+#         return n
+#     return re_fib(n-1) + re_fib(n-2)
+    
+# pos = input('Enter position integer only: ')
+
+# if pos.isdigit():
+#     pos = int(pos)
+#     for i in range(pos):
+#         print(re_fib(i),end=' ')
+# else:
+#     print('Invalid input! pls enter the integer')
+####################################################
+data = """
+Contact us at support@gmail.com or admin@company.in
+Call 9876543210 or 9123456789
+Backup email: test.user123@yahoo.com
+"""
+import re
+
+def extract_emails_phones(text):
+    # emails = re.findall(r'[a-zA-Z0-9.%_+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',text)
+    # phones = re.findall(r'\b\d{10}\b',text)
+    emails_phones = re.findall(r'[a-zA-Z0-9.%_+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|\b\d{10}\b',text) 
+    
+    
+    # return emails,phones
+    return emails_phones
+    
+print(extract_emails_phones(data))   
+
+##################################################
+
+def is_valid(ip):
+    
+    match = re.fullmatch(r'\b((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)\b' ,ip)
+    if match:
+        print('Valid IP')
+    else:
+        print('Not a valid IP')
+is_valid('10.145.88.90')    # Valid IP  
