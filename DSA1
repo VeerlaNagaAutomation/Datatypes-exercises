@@ -398,7 +398,8 @@ logging.info(out)
 # print(out)  
 # op: aaaabbccc
 
-# s ='aaaabbbccz'
+# s ='aaaabbbccz'    #interview question spanidea ----> # python code s="dddmmmmaa66666xdd" ----> #o/p == "d3m4a265xd2"
+
 # out=''
 # i=1
 # c=1
@@ -443,6 +444,30 @@ for i in s1:
         if i == j and i not in l1:
             l1.append(i)
 print(l1)
+###########################
+#Mirafra interview
+
+# Q1 - Find the common words between STR1 and STR2
+STR1="Mirafra is a product engineering company located in Bangalore. Karnataka is an industrial state"
+STR2="Bangalore is in Karnataka. Mirafra has PAN India presence"   
+
+## REGEX
+import re
+
+words1 = re.findall(r'\b\w+\b',STR1)
+words2 = re.findall(r'\b\w+\b',STR2)
+
+print(words1)
+# punchuavations will go here
+# ['Mirafra', 'is', 'a', 'product', 'engineering', 'company', 'located', 'in', 'Bangalore', 'Karnataka', 'is', 'an', 'industrial', 'state']
+print(words2)
+#['Bangalore', 'is', 'in', 'Karnataka', 'Mirafra', 'has', 'PAN', 'India', 'presence']
+
+common = set(words1) & set(words2)
+print(common)
+# {'is', 'Karnataka', 'Bangalore', 'Mirafra', 'in'}
+
+#################################
 
 # common chars in 2 strings
 
