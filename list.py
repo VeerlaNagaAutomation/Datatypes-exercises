@@ -387,6 +387,27 @@ print(lst3) # [[1, 2, 3, 4], [5, 6, 7, 8]]
 
 
 #===========================================================================================
+interview spanidea
+
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+ 
+# Output: ['My', 'name', 'is', 'Kelly']
+out = ' '
+i = 0
+j = 0
+while i < len(list1) and j <len(list2):
+    out = out + list1[i] + list2[j] + ' '
+    i+=1
+    j+=1
+print(out)    
+s = out.split()
+print(s)
+op:
+ My name is Kelly 
+['My', 'name', 'is', 'Kelly']
+
+##########################################
 
 ## 2d Array
 
