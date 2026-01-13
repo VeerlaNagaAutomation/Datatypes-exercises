@@ -557,7 +557,7 @@ def anagrames(s1,s2):
     for ch in s2:
         if ch in freq:
             freq[ch]-=1
-    for value in freq.values():
+    for value in freq.values():  ##*** here insted of values, i have mentioned items which is wromge   ***###
         if value != 0:
             return False
     return True 
