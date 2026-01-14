@@ -23,23 +23,47 @@ obj = Test()
 print(type(obj).__name__) #Test
 
 #########################
-x = 100   # global variable
-
-class MyClass:
-    def __init__(self, value):
+x = 100
+class Myclass:
+    def __init__(self,value):
         self.value = value
-
+        
     def show(self):
-        global x        # refer to global x
-        print(x)        # prints global x
+        global y
+        y = x +1
+        print(y)
         print(self.value)
-
-o = MyClass(50)
-o.show()
-
-print(x)              # global x
-print(o.value)        # access instance variable
+        
+O = Myclass(50)
+O.show()
+print(y)
 op:
+101
+50
+101
+##############################
+# same prog without global
+x = 100
+class Myclass:
+    def __init__(self,value):
+        self.value = value
+        
+    def show(self):
+        y = x +1
+        print(y)
+        print(self.value)
+        
+O = Myclass(50)
+O.show()
+print(y)
+op:
+101
+50
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 13, in <module>
+NameError: name 'y' is not defined
+
 
 
 ##########################################################
@@ -240,6 +264,25 @@ a = Number(10)
 b = Number(20)
 print(a+b)  # 30
 
+class Number:
+    def __init__(self, x):
+        self.x = x
+    def __mul__(self,other):
+        return self.x * other.x
+a = Number(10)
+b = Number(20)
+print(a*b) #200
+
+class Number:
+    def __init__(self, x):
+        self.x = x
+    def __sub__(self,other):
+        return self.x - other.x
+a = Number(10)
+b = Number(20)
+print(a-b) #-10
+
+
 # 5️⃣ __eq__ → Equality (==)
 
 class Test:
@@ -292,6 +335,58 @@ class Person:
 
 p = Person("Ram")
 print(p) #Ram
+###############
+
+#__str__ takes only ONE parameter → self
+
+#__str__ is used for string representation, not addition
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __add__(self, other):
+        return self.name + " " + other.name
+
+    def __str__(self):
+        return self.name
+
+p = Person("Ram")
+q = Person("Setha")
+
+print(p + q)
+
+###################
+🔍 Why __str__ is needed
+
+Without __str__:
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("Ram")
+print(p)
+
+❌ Output:
+<__main__.Person object at 0x7f8c3b2d>
+
+
+This is not human-readable.
+
+✅ With __str__
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+p = Person("Ram")
+print(p)
+
+✅ Output:
+Ram
+#############
 
 
 3️⃣ __len__ → Length
