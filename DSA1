@@ -250,7 +250,7 @@ print(longest_palindrome(s))
 op:
 oo
 ##############################################
-def lon_substring_with_repeating_char(s):
+def lon_substring_without_repeating_char(s):
    def len_lon_sub(s):
     l = 0
     res = 0
