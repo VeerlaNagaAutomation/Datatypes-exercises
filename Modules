@@ -1,0 +1,20 @@
+#Generating the passwords
+from random import *
+out =" "
+for i in range(6):
+    out = out + str(randint(0,9))
+print(out) 
+op:
+ 535207    
+for j in range(6):
+    out=''
+    for i in range(6):
+        out = out + str(randint(0,9))
+    print(out) 
+# op:
+300192
+156972
+324732
+354736
+916966
+154081 
