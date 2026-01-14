@@ -400,4 +400,28 @@ class MyList:
 obj = MyList()
 print(len(obj)) #5
 
+######################
+
+# @satticmethod and @classmethod
+# class Person:
+#     name = 'Anonmyous'
+#     @classmethod
+#     def change_name(cls,name):
+#         cls.name = name
+        
+# p1 = Person()
+# p1.change_name('Ram')
+# print(p1.name)
+# print(Person.name)
+
+class Employee:
+    company = "Intel"
+
+    @classmethod
+    def change_company(cls, name):
+        cls.company = name
+
+Employee.change_company("NVIDIA")
+print(Employee.company)
+
 ####################################
