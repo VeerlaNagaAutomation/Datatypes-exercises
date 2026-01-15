@@ -32,8 +32,135 @@ pos Des
 D
 age 29
 pos des
+#####################
+d = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
 
+print(d['colors'][1]) # white
 #################################
+thisdict = dict(name = "John", age = 36, country = "Norway")
+
+print(thisdict) # {'name': 'John', 'age': 36, 'country': 'Norway'}
+####################
+################
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(d.get('model')) # Mustang
+##################################
+d = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+print(d.keys()) # dict_keys(['brand', 'model', 'year'])
+print(d.values()) # dict_values(['Ford', 'Mustang', 1964])
+print(d.items()) # dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+#################################
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+
+print(thisdict) # {'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+#############################
+Adding Items:
+d =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+ } 
+d["color"] = "red"
+print(d) # {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
+###
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+d.update({"color": "red"})
+
+print(d) # {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
+
+##############################
+d =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+d.pop("model")
+print(d) # {'brand': 'Ford', 'year': 1964}
+###
+d =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+d.popitem() # removes lat item
+print(d) # {'brand': 'Ford', 'model': 'Mustang'}
+###########################
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = d.copy()
+print(mydict) # {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+###
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(d)
+print(mydict) # {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+############################
+d = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+
+print(d['child3']['year']) # 2011
+
+for k,v in d.items():
+  print(k)
+  for i,j in v.items():
+  	print(i,j)
+    
+ op:
+ 
+child1
+name Emil
+year 2004
+child2
+name Tobias
+year 2007
+child3
+name Linus
+year 2011
+
+########################
+
+
+
 "Merged the below dictionary:
 dict1={1:10, 2:20}
 dict2={3:30, 4:40}
@@ -65,4 +192,5 @@ tup2 = (4,5,6)
 dic = dict(zip(tup1, tup2))
 print(dic)
 #################################
+
 
