@@ -123,3 +123,106 @@ def is_valid(ip):
     else:
         print('Not a valid IP')
 is_valid('10.145.88.90')    # Valid IP  
+
+##################################################
+
+check whether a given string contains all alphabets from A to Z (i.e., it is a pangram).
+
+def is_pangram(s):
+    s = s.lower()
+    for ch in range(ord('a'), ord('z') + 1):
+        if chr(ch) not in s:
+            return False
+    return True
+
+text = input("Enter a string: ")
+print("Pangram" if is_pangram(text) else "Not a Pangram")
+
+
+#################################################
+
+
+❌ Problem in Your Code
+lst = [67, 89]
+
+max_num = 0
+sec_max = 0
+
+for i in lst:
+    if i > max_num:
+        max_num = i
+    if i < max_num and i > sec_max:
+        sec_max = i
+
+print(sec_max)
+
+What goes wrong?
+
+When i = 67
+
+max_num = 67
+
+second if fails (67 < 67 ❌)
+
+When i = 89
+
+max_num = 89
+
+second if fails (89 < 89 ❌)
+
+➡️ sec_max never updates, so output is 0 ❌
+
+✅ Correct Logic (Single Pass – Interview Friendly)
+lst = [67, 89]
+
+max_num = float('-inf')
+sec_max = float('-inf')
+
+for i in lst:
+    if i > max_num:
+        sec_max = max_num
+        max_num = i
+    elif i > sec_max and i != max_num:
+        sec_max = i
+
+print(sec_max)
+
+✔️ Output
+67
+
+🧠 Why This Works
+
+When a new maximum is found:
+
+Old max_num becomes sec_max
+
+Handles:
+
+Any order
+
+Negative numbers
+
+Duplicate values
+
+✅ Alternative (2-Pass Simple Logic)
+lst = [67, 89]
+
+max_num = max(lst)
+sec_max = float('-inf')
+
+for i in lst:
+    if i != max_num and i > sec_max:
+        sec_max = i
+
+print(sec_max)
+
+⚠️ Edge Case Handling (Must Mention in Interview)
+if len(lst) < 2:
+    print("Second max not possible")
+
+📝 Interview Summary (One-Liner Explanation)
+
+We track the maximum and second maximum in one traversal by shifting the old maximum to second maximum whenever a larger element is found.
+################################
+
+
