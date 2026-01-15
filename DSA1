@@ -105,7 +105,13 @@ op:
 # 12 = 2X2X3
 #############################################
 # Angustrome number
-n = int(input('Enter the number'))
+while True:
+    try:
+        n = int(input('Enter the number: '))
+        print("you entered", n)
+        break
+    except:
+        print('Invalid input pls enter the integer number')
 num = n
 sum = 0
 d = len(str(n))
