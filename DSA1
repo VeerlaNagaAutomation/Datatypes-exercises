@@ -166,7 +166,7 @@ def is_palin(s):
     out=''
     s = s.lower()
     for ch in s:
-        if ch.isalpha():
+        if ch.isalpha():   ## if 'a' <= ch <= 'z':
             out+=ch
     return out == out[::-1]
 s = "No lemon, no melon."
