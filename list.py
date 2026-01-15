@@ -164,15 +164,15 @@ print(out)     # [[1, 2], [3, 4], [5, 6], [7, 8], 10, 9]
 ##########################################
 ##========================================
 arr = [2,[4,[4,[5,[7]]]],8,9]
-l1 = [ ]
+l1 = [ ]    ########********** l1 munst declare outside only ###############**********
 def flatten(lst):
     for i in lst:
         if type(i) == list:
             flatten(i)
         else:
             l1.append(i)
-flatten(arr)
-print(l1)  # [2, 4, 4, 5, 7, 8, 9]
+    retuen l1     
+print(flatten(arr))  # [2, 4, 4, 5, 7, 8, 9]
 ## Reverse of above===========
 a = [2, 4, 4, 5, 7, 8, 9]
 output = [2,[4,[4,[5,[7]]]],8,9]   ####  By heart ###
