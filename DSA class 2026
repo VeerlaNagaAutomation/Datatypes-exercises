@@ -1,3 +1,5 @@
+DAY 1: 14th-01-2026 
+
 def optimal(arr):
     largest = secoundlargest = float('-inf')
     
