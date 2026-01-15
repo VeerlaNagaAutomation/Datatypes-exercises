@@ -20,7 +20,7 @@ op:
 def fib(n):
    a,b = 0,1
    c = 0
-   while c <= n:
+   while c < n:   ## c < n for exactly 10 numbers
        yield a
        a,b = b,a+b
        c+=1
@@ -43,7 +43,7 @@ Enter the number10
 13
 21
 34
-55
+
 #######################
 def re_fib(n):
     if n == 0:
@@ -80,6 +80,7 @@ op:
 Enter the number5
 factorial of a given 5 is 120
 #########################
+factors for given number
 n = int(input('Enter the number'))
 for i in range(1,n+1):
     if n%i == 0:
