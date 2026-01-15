@@ -470,8 +470,20 @@ print(words1)
 print(words2)
 #['Bangalore', 'is', 'in', 'Karnataka', 'Mirafra', 'has', 'PAN', 'India', 'presence']
 
-common = set(words1) & set(words2)
-print(common)
+#common = set(words1) & set(words2)
+#print(common)
+
+import re
+words1 = re.findall(r'\b\w+\b',STR1)
+words2 = re.findall(r'\b\w+\b',STR2)
+l1=[]
+for i in words1:
+    for j in words2:
+        if i == j and i not in l1:
+            l1.append(i)
+print(l1)  # ['Mirafra', 'is', 'in', 'Bangalore', 'Karnataka']
+
+
 # {'is', 'Karnataka', 'Bangalore', 'Mirafra', 'in'}
 
 #################################
@@ -489,7 +501,17 @@ print(s2)
 for i in s1:
     if i in s2:
         s3.add(i)
-print(s3)   # {'n', 'a'}  
+print(s3)   # {'n', 'a'} 
+####
+
+s1 = 'naina'
+s2 = 'reena'
+l1=[]
+for i in s1:
+    for j in s2:
+        if i == j and i not in l1:
+            l1.append(i)
+print(l1)  # ['n', 'a']
 #################################################
 # Counting frequency of words in a string out put in dictionary form
 s = 'seena loves eating apple her sister also loves eating apple and mango'
