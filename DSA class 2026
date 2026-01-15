@@ -1,0 +1,15 @@
+def optimal(arr):
+    largest = secoundlargest = float('-inf')
+    
+    for num in arr:
+        if num > largest:
+            secoundlargest = largest
+            largest = num
+        elif num > secoundlargest and num != largest:
+            secoundlargest = num
+    if secoundlargest != float('-inf'):
+        return secoundlargest
+    return 'Not found'    
+
+arr=[896,78]
+print("secoundlargest:",optimal(arr))
