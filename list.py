@@ -247,6 +247,24 @@ for j in l2:
         
 print(max_val) 
 print(sec_max)
+
+##########
+if 2 elements in list
+
+lst = [67, 89]
+
+max_num = float('-inf') #******
+sec_max = float('-inf') #*******
+
+for i in lst:
+    if i > max_num:
+        sec_max = max_num
+        max_num = i
+    elif i > sec_max and i != max_num: #**********************
+        sec_max = i
+
+print(sec_max) # 67
+
 #===========================================================
 # lst = [89,-2,78,67,90,-3,-97,98,786,678,56]  
 # n = len(lst)
