@@ -563,6 +563,108 @@ def anagrames(s1,s2):
     return True 
 print(anagrames("listen","silent"))  
 # op: True
+
+##############
+check whether a given string contains all alphabets from A to Z (i.e., it is a pangram).
+
+def is_pangram(s):
+    s = s.lower()
+    for ch in range(ord('a'), ord('z') + 1):
+        if chr(ch) not in s:
+            return False
+    return True
+
+text = input("Enter a string: ")
+print("Pangram" if is_pangram(text) else "Not a Pangram")
+
+explanation
+
+🔹 for ch in range(ord('a'), ord('z') + 1):
+
+Loops through ASCII values of characters from 'a' to 'z'
+
+📌 Internally:
+
+ord('a') = 97
+ord('z') = 122
+
+
+So loop runs from 97 to 122
+
+🔹 chr(ch)
+
+Converts ASCII value back to character
+
+Example:
+
+chr(97) → 'a'
+chr(98) → 'b'
+
+
+################################
+
+ Remove duplicate characters while maintaining order
+"programming" → "progamin"
+s ="programming"
+out = ' '
+for ch in s:
+    if ch not in out:
+        out+=ch
+print(out)  
+
+### improved version
+
+s = "programming"
+freq = {}
+out = ""
+
+for ch in s:
+    if ch not in freq:
+        freq[ch] = 1
+        out += ch
+
+print(out)
+#####
+s = "programming"
+seen = [0] * 256   # ASCII table
+out = ""
+
+for ch in s:
+    if seen[ord(ch)] == 0:
+        out += ch
+        seen[ord(ch)] = 1
+
+print(out)
+explan:
+
+🔹 seen = [0] * 256
+
+Creates a list of size 256, representing the ASCII character set.
+
+Index → ASCII value of character
+
+Value 0 → character not seen
+
+Value 1 → character already seen
+
+📌 Example:
+
+seen[112]  # represents 'p'
+
+🔹 ord(ch)
+
+Returns the ASCII value of the character.
+
+Example:
+
+ord('p') → 112
+ord('r') → 114
+
+⏱️ Time & Space Complexity (Interview Question)
+
+Time Complexity: O(n)
+
+Space Complexity: O(1) (fixed size 256)
 ##########################################
 def len_lon_sub_string(s):
     l = 0
@@ -619,6 +721,40 @@ Corresponding substring
 
 Because checking all substrings would take O(n²), but sliding window allows me to solve it in O(n).
 ###################################
+8. Check if a string is a rotation of another "abcd" & "cdab"
+⭐ Interview-Optimal Idea (Concept)
+
+If s2 is a rotation of s1, then s2 must be a substring of s1 + s1
+
+Example:
+s1 + s1 = "abcdabcd"
+"cdab" is present → rotation
+✅ Method 1: Optimal & Clean (Interview Favorite)
+def is_rotation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+
+    s = s1 + s1
+    return s2 in s
+
+print(is_rotation("abcd", "cdab"))
+
+🧠 Explanation
+
+Rotation preserves length
+
+Doubling s1 contains all rotations
+
+Substring check confirms rotation
+
+⏱ Complexity
+
+Time: O(n)
+
+Space: O(n)
+
+
+###################################
 Reverse an array in-place
 
 Find largest / smallest / second largest element
@@ -660,6 +796,82 @@ Check if one string is rotation of another
 Remove duplicates from string
 
 Longest common prefix
+
+🔹 MEDIUM LEVEL (1–15)
+1. Check if a string is a pangram  -----------------------
+
+Contains all alphabets A–Z at least once.
+
+2. Find the first non-repeating character in a string ------------------
+
+Must be O(n) time.
+
+3. Reverse words in a sentence ------------------
+
+"Hello World" → "World Hello"
+
+4. Check if two strings are anagrams (no sorting allowed) --------
+5. Find longest word in a sentence
+6. Remove duplicate characters while maintaining order--------
+
+"programming" → "progamin"
+
+7. Count frequency of characters without using collections.Counter -----------------
+8. Check if a string is a rotation of another --------------------
+
+"abcd" & "cdab"
+
+9. Replace spaces with %20 (URL encoding style)
+10. Find all substrings of a string
+11. Check if string contains only digits (no isdigit())
+12. Convert "aaabbc" → "a3b2c1" (basic compression) -------------------------
+13. Capitalize the first letter of each word
+14. Find the longest common prefix among strings
+
+["flower","flow","flight"] → "fl"
+
+15. Check if a string is a palindrome ignoring special chars
+
+"A man, a plan, a canal: Panama"
+
+🔹 TOUGH LEVEL (16–25)
+16. Find the longest substring without repeating characters
+
+Very common in Google / Microsoft
+
+17. Find the longest palindromic substring
+
+Asked in Google, AMD
+
+18. Check if string can be rearranged to form a palindrome
+19. Pattern matching (basic version of strstr)
+
+Implement substring search without using in
+
+20. Find the minimum window substring
+
+Sliding window, very popular in Google
+
+21. Decode string
+
+"3[a2[c]]" → "accaccacc"
+
+22. Find all anagram indices of a pattern in a string
+
+"cbaebabacd", pattern "abc"
+
+23. Compare two strings containing backspaces
+
+"ab#c" vs "ad#c"
+
+24. Implement string multiplication
+
+"123" * "45" → "5535" (no int conversion)
+
+25. Remove minimum characters to make strings equal
+
+Dynamic programming / LCS concept
+(Seen in Microsoft / Google)
 
 3️⃣ Searching & Sorting
 
