@@ -31,6 +31,198 @@
 1️⃣7️⃣ “Turn this project [Project Details] into a short portfolio description.”
 1️⃣8️⃣ “Create a 30-day learning plan to improve [Skill/Tool].”
 
+##########
+🚀 Day 6 – Embedded Software vs Firmware
+
+In every embedded device, two important layers work together: Software & Firmware. Understanding the difference is key in automotive & EV systems.⚡
+
+🔹 Firmware
+Low-level code, stored in ROM/Flash.
+Directly interacts with hardware.
+Rarely changed, only updated when essential.
+Example: Car ECU code, BIOS in PCs.
+
+🔹 Embedded Software
+Runs on top of firmware/hardware.
+Performs higher-level tasks & logic.
+Can be updated frequently.
+Example: EV battery management algorithms, Smart TV apps.
+
+✨ Key Difference:
+Firmware = foundation (close to hardware).
+Software = flexible (task-specific logic).
+
+💡 Both together make devices intelligent — firmware ensures the system boots & talks to hardware, while software makes it “smart” for real-world applications.
+
+hashtag#Day6 hashtag#30DaysEmbedded hashtag#Firmware hashtag#EmbeddedSoftware hashtag#Automotive hashtag#EV hashtag#EmbeddedSystems hashtag#IoT hashtag#LearningJourney
+Activate to view larger image,
+
+
+From <https://www.linkedin.com/feed/> 
+
+=======================================================================================
+
+𝐁𝐈𝐎𝐒 𝐯𝐬 𝐔𝐄𝐅𝐈: 𝐊𝐞𝐲 𝐃𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐜𝐞𝐬
+
+Every computer needs firmware to start up and connect hardware to the operating system. For decades, this role was handled by BIOS (𝐁𝐚𝐬𝐢𝐜 𝐈𝐧𝐩𝐮𝐭/𝐎𝐮𝐭𝐩𝐮𝐭 𝐒𝐲𝐬𝐭𝐞𝐦), introduced in the early 1980s. In the 2000s, it was replaced by UEFI (𝐔𝐧𝐢𝐟𝐢𝐞𝐝 𝐄𝐱𝐭𝐞𝐧𝐬𝐢𝐛𝐥𝐞 𝐅𝐢𝐫𝐦𝐰𝐚𝐫𝐞 𝐈𝐧𝐭𝐞𝐫𝐟𝐚𝐜𝐞), a faster, more secure, and more advanced firmware standard.
+
+𝐍𝐨𝐰 𝐥𝐞𝐭’𝐬 𝐬𝐞𝐞 𝐭𝐡𝐞 𝐤𝐞𝐲 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐜𝐞𝐬 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝐁𝐈𝐎𝐒 𝐚𝐧𝐝 𝐔𝐄𝐅𝐈.
+
+𝟏) 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐁𝐈𝐎𝐒?
+• BIOS stands for Basic Input/Output System. It’s the traditional firmware interface that initializes hardware during the boot process and hands control to the operating system.
+• Runs in 𝟏𝟔-𝐛𝐢𝐭 real mode, which limits memory and performance.
+• Uses MBR (𝐌𝐚𝐬𝐭𝐞𝐫 𝐁𝐨𝐨𝐭 𝐑𝐞𝐜𝐨𝐫𝐝) for partitioning, supporting disks up to 2 TB and only 4 primary partitions.
+• 𝐈𝐧𝐭𝐞𝐫𝐟𝐚𝐜𝐞: Text-based, keyboard-only navigation.
+• 𝐒𝐞𝐜𝐮𝐫𝐢𝐭𝐲: Very basic, BIOS does not provide any security feature like Secure Boot.
+• 𝐁𝐨𝐨𝐭 𝐬𝐩𝐞𝐞𝐝: Slower, as it performs a full POST (Power-On Self-Test) before loading the OS.
+ 
+𝟐) 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐔𝐄𝐅𝐈?
+• UEFI stands for Unified Extensible Firmware Interface. It’s the modern replacement for BIOS, designed to overcome its limitations.
+• Runs in 𝟑𝟐-𝐛𝐢𝐭 𝐨𝐫 𝟔𝟒-𝐛𝐢𝐭 mode, allowing more memory and faster execution.
+• Uses GPT (𝐆𝐔𝐈𝐃 𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧 𝐓𝐚𝐛𝐥𝐞), supporting disks up to 18 exabytes and up to 128 partitions.
+• 𝐈𝐧𝐭𝐞𝐫𝐟𝐚𝐜𝐞: Graphical UI, mouse and keyboard support.
+ •𝐒𝐞𝐜𝐮𝐫𝐢𝐭𝐲: Includes Secure Boot, preventing unauthorized OS or malware from loading.
+• 𝐁𝐨𝐨𝐭 𝐬𝐩𝐞𝐞𝐝: Faster, as it can skip legacy POST and load OS directly.
+ •Additional features: Network booting, remote diagnostics, and modular design (acts like a mini operating system).
+
+𝐊𝐞𝐲 𝐓𝐚𝐤𝐞𝐚𝐰𝐚𝐲𝐬:
+• 𝐁𝐈𝐎𝐒: Legacy firmware that uses 𝐌𝐁𝐑 and supports drives only up to 𝟐 𝐓𝐁.
+• 𝐔𝐄𝐅𝐈: Modern firmware that uses 𝐆𝐏𝐓 and supports drives up to 𝟏𝟖 𝐄𝐁.
+ 
+hashtag#BIOS hashtag#UEFI hashtag#Firmware hashtag#TechExplained hashtag#Semiconductor hashtag#SystemBoot hashtag#Technology hashtag#EmbeddedSystems hashtag#ModernComputing
+Activate to view larger image,
+
+
+From <https://www.linkedin.com/feed/> 
+
+############
+	1. 3.0 KBD mouse BT (Targus)
+	2.  4.0 KBD mouse (BLE - Microsoft)
+5.0  KBD mosue (cool master)
+
+##########
+
+SST: Single-Stream Transport
+MST: Multi Steam Transport
+
+
+TDR,BSOD,GSOD,
+
+
+DP and HDMI
+
+SDR and HDR
+
+PSR
+
+Whitepearl Tool
+
+
+
+From <Display flicker refers to a visible, rapid and continuous fluctuation in the brightness of a screen
+
+
+
+
+⚠️ Common Causes of Display Flicker
+🔌 1. Cable or Connection Issues
+	• Loose, damaged, or low-quality cables (especially HDMI, DisplayPort).
+	• Incorrectly seated connectors.
+Fix:
+	• Reseat the cable on both ends.
+	• Try a different (and high-quality) cable.
+	• Switch to a different port on your GPU or monitor.
+
+🧠 2. Graphics Driver Problems
+	• Outdated or corrupted GPU drivers.
+	• Recent updates causing conflicts.
+Fix:
+	• Update your graphics drivers from the official NVIDIA, AMD, or Intel site.
+	• Roll back to a previous driver if flickering started after an update.
+	• Use DDU (Display Driver Uninstaller) to clean install drivers if needed.
+
+🖥️ 3. Refresh Rate or Resolution Mismatch
+	• GPU is outputting a refresh rate or resolution the monitor doesn’t support well.
+	• Sometimes higher refresh rates cause instability on some panels.
+Fix:
+	• Right-click Desktop > Display settings > Advanced display settings.
+	• Try setting the refresh rate to 60Hz or native resolution/refresh rate of the monitor.
+	• Avoid overclocked refresh rates unless tested.
+
+🌈 4. Software Conflicts
+	• Background apps or overlays (e.g., Discord, screen recorders, RGB software) causing flickering.
+	• Full-screen optimizations or G-Sync/FreeSync glitches.
+Fix:
+	• Disable or exit background apps to test.
+	• Disable full-screen optimizations (Right-click app > Properties > Compatibility).
+	• Toggle G-Sync/FreeSync settings in the GPU control panel.
+
+⚡ 5. Power Supply or Monitor Issues
+	• Fluctuating power can cause display instability.
+	• Monitor backlight issues or panel degradation.
+Fix:
+	• Try a different power outlet or surge protector.
+	• Test the display on another computer or device.
+	• If the monitor flickers during POST or BIOS too, it’s likely a hardware issue.
+
+🧪 6. Screen Flicker in Specific Apps (e.g., Browsers, Video Playback)
+	• Hardware acceleration glitches.
+Fix:
+	• In Chrome/Edge/Firefox: Go to settings > Turn off "Use hardware acceleration when available."
+	• In video players, disable hardware acceleration or switch rendering modes.
+
+🛠️ Pro Tip:
+If you’re using DisplayPort, try changing the DP version in your monitor’s on-screen menu (e.g., from 1.4 to 1.2) to fix handshake/compatibility problems.
+
+
+Display Corruption:
+
+corruption" generally refers to visual artifacts or glitches on the screen that distort the image. This can manifest as random colors, distorted pixels, or even blank screens, indicating a problem with the display hardware or software. 
+
+> 
+Hardware acceleration: 
+
+
+Hardware acceleration in display technology refers to utilizing dedicated hardware, like a GPU, to offload tasks from the CPU, improving performance and visual quality. This often involves tasks like 2D and 3D rendering, video decoding, and image processing, leading to smoother animations, faster loading times, and higher resolution displays. 
+
+Here's a more detailed look:
+Benefits of Hardware Acceleration:
+• Faster Performance:
+By offloading tasks to the GPU, the CPU can focus on other important processes, resulting in faster rendering and overall system performance. 
+• Improved Visual Quality:
+GPUs are specifically designed for graphics processing, allowing for smoother animations, higher quality video playback, and support for more complex rendering techniques. 
+• Reduced CPU Load:
+Hardware acceleration frees up the CPU to perform other tasks, which can be particularly beneficial in resource-intensive applications or when running multiple applications simultaneously. 
+How it Works:
+1. Offloading: The CPU sends tasks, like drawing graphics or decoding video, to the GPU. 
+2. GPU Processing: The GPU, with its specialized architecture and processing power, efficiently handles these tasks. 
+3. Display: The processed data is then sent to the display, resulting in the visual output. 
+Examples in Display Technology:
+• GPU Rendering:
+In web browsers, GPUs are used for rendering web pages and displaying multimedia content, according to Learn Microsoft. 
+• Video Decoding:
+GPUs accelerate video decoding, allowing for smoother playback of high-resolution videos and 360-degree content. 
+• 3D Graphics:
+GPUs are essential for rendering 3D graphics in games, movies, and other applications. 
+• Image Processing:
+GPUs can be used for accelerating image processing tasks, such as image editing and analysis. 
+• Mobile Devices:
+In mobile devices, hardware acceleration is crucial for running graphically intensive applications and games efficiently. 
+Considerations:
+• Compatibility:
+Not all software or hardware is fully compatible with hardware acceleration, which can lead to compatibility issues in some cases. 
+• Resource Consumption:
+While hardware acceleration can improve performance, it also requires more resources, including memory and power, which can impact battery life on mobile devices. 
+• Driver Issues:
+Outdated or corrupted graphics drivers can also affect hardware acceleration performance and stability. 
+
+From <https://www.google.com/search?q=Hardware+acceleration+in+display+technology&sca_esv=a22faab19f8f3fff&rlz=1C1CHBF_en&ei=1-AFaIKkM8PhseMP9-PqmQc&ved=0ahUKEwjC69WQu-iMAxXDcGwGHfexOnMQ4dUDCBA&uact=5&oq=Hardware+acceleration+in+display+technology&gs_lp=Egxnd3Mtd2l6LXNlcnAiK0hhcmR3YXJlIGFjY2VsZXJhdGlvbiBpbiBkaXNwbGF5IHRlY2hub2xvZ3kyBRAhGKABSMYTUABYxA5wAHgBkAEAmAGwAaABrwKqAQMwLjK4AQPIAQD4AQL4AQGYAgKgArYCmAMAkgcDMC4yoAenBbIHAzAuMrgHtgI&sclient=gws-wiz-serp> 
+
+
+
+
+
+
 
 
 I2C Notes
