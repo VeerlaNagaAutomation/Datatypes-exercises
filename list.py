@@ -428,7 +428,38 @@ op:
 ##########################################
 
 ## 2d Array
+Matrix printing
 
+def matrix(arr,m,n):
+    for i in range(m):
+        for j in range(n):
+            print(arr[i][j],end=' ')
+        print('')    
+            
+arr = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+m=n=3
+print('matrix')
+matrix(arr,m,n)
+
+op:
+matrix
+1 2 3 
+4 5 6 
+7 8 9 
+
+###################
+# matrix diogonal addition            
+arr = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+print(arr[0][0]+arr[1][1]+arr[2][2]+arr[0][2]+arr[1][1]+arr[2][0])
 
 
 ##list to 3x3 matrix
