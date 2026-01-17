@@ -1,3 +1,357 @@
+🐍 PYTHON DSA INTERVIEW MASTER PLAN
+
+(Topic → What to Learn → Most Asked Interview Questions)
+
+🔰 1. Python Basics for DSA (FOUNDATION)
+What to Learn
+
+Data types (int, float, str, list, tuple, dict, set)
+
+Loops (for, while)
+
+Functions
+
+Recursion basics
+
+Time & Space Complexity (Big-O)
+
+Most Asked Interview Questions
+
+Difference between list and tuple
+
+Why strings are immutable in Python?
+
+What is recursion? Explain base case
+
+Time complexity of for loop?
+
+Difference between break, continue, pass
+
+How Python handles memory?
+
+What is Big-O notation?
+
+📦 2. Arrays / Lists (🔥 HIGHEST PRIORITY)
+What to Learn
+
+Indexing & traversal
+
+Insert / delete operations
+
+Two-pointer technique
+
+Sliding window technique
+
+In-place operations
+
+Python Focus
+
+append(), pop(), insert()
+
+sorted() vs sort()
+
+Slicing ([::-1])
+
+Most Asked Interview Questions
+
+Reverse a list without extra space
+
+Find max and min in an array
+
+Move all zeros to the end
+
+Find second largest element
+
+Rotate array by k positions
+
+Find duplicate elements
+
+Maximum subarray sum (Kadane’s Algorithm)
+
+Find missing number in array
+
+🔤 3. Strings (🔥 VERY IMPORTANT)
+What to Learn
+
+String traversal
+
+Immutability
+
+Substrings
+
+Pattern problems
+
+Python Focus
+
+split(), join()
+
+count()
+
+ord() / chr()
+
+Slicing
+
+Most Asked Interview Questions
+
+Reverse a string
+
+Check palindrome
+
+Count character frequency
+
+First non-repeating character
+
+Check anagram
+
+Longest substring without repeating characters
+
+Pangram check
+
+Remove duplicate characters
+
+🗂️ 4. Hashing (Dictionary & Set) ⭐
+What to Learn
+
+Hash table concept
+
+Frequency counting
+
+Fast lookup
+
+Python Focus
+
+dict
+
+set
+
+defaultdict
+
+Counter
+
+Most Asked Interview Questions
+
+Two Sum problem
+
+Count frequency of elements
+
+Find duplicates using dictionary
+
+Intersection of two arrays
+
+Longest consecutive sequence
+
+Majority element
+
+Check if two arrays are equal
+
+👉 90% Python DSA solutions use hashing
+
+🔁 5. Recursion & Backtracking
+What to Learn
+
+Recursive calls
+
+Stack behavior
+
+Backtracking template
+
+Most Asked Interview Questions
+
+Factorial using recursion
+
+Fibonacci series
+
+Reverse string using recursion
+
+Generate all subsets
+
+Generate permutations
+
+N-Queens (conceptual)
+
+📚 6. Stack & Queue
+Stack – What to Learn
+
+LIFO principle
+
+Expression problems
+
+Queue – What to Learn
+
+FIFO principle
+
+Deque usage
+
+Python Focus
+
+Stack using list
+
+Queue using collections.deque
+
+Most Asked Interview Questions
+
+Stack
+
+Implement stack in Python
+
+Valid parentheses
+
+Reverse string using stack
+
+Next greater element
+
+Queue
+5. Implement queue
+6. First non-repeating character in a stream
+
+🔗 7. Linked List
+What to Learn
+
+Singly linked list
+
+Pointer manipulation
+
+Fast & slow pointer technique
+
+Most Asked Interview Questions
+
+Reverse linked list
+
+Detect loop in linked list
+
+Find middle of linked list
+
+Merge two sorted linked lists
+
+Remove Nth node from end
+
+🌳 8. Trees (Binary Tree & BST)
+What to Learn
+
+Tree traversal
+
+DFS & BFS
+
+Recursion on trees
+
+Python Focus
+
+Recursive traversal
+
+deque for level order
+
+Most Asked Interview Questions
+
+Inorder / Preorder / Postorder traversal
+
+Height of binary tree
+
+Level order traversal
+
+Check if binary tree is BST
+
+Lowest Common Ancestor
+
+🔍 9. Searching & Sorting
+What to Learn
+
+Linear & Binary search
+
+Sorting algorithms (basics)
+
+Python Focus
+
+Custom sorting using key=
+
+Most Asked Interview Questions
+
+Binary search implementation
+
+Search in rotated sorted array
+
+Merge two sorted arrays
+
+Time complexity of sorting algorithms
+
+Stable vs unstable sorting
+
+🧠 10. Greedy & Dynamic Programming (ADVANCED)
+Greedy – What to Learn
+
+Greedy choice property
+
+DP – What to Learn
+
+Memoization
+
+Tabulation
+
+Most Asked Interview Questions
+
+Fibonacci using DP
+
+Climbing stairs problem
+
+Coin change problem
+
+Longest common subsequence
+
+0/1 Knapsack (theory)
+
+📅 Recommended 30-Day Study Plan
+Day	Topic
+1–2	Python Basics
+3–6	Arrays
+7–9	Strings
+10–12	Hashing
+13–14	Recursion
+15–16	Stack & Queue
+17–18	Linked List
+19–21	Trees
+22–24	Searching & Sorting
+25–28	DP & Greedy
+29–30	Revision + Mock
+🎯 Interview Success Tips (Python Specific)
+
+Always explain approach → code → complexity
+
+Prefer dictionary & set
+
+Write clean, readable code
+
+Avoid over-engineering
+
+Dry run with example
+
+👉 Next I can provide:
+
+✅ Topic-wise Python code solutions
+
+✅ Top 100 Python DSA interview questions
+
+✅ LeetCode Python problem list
+
+✅ Python DSA cheat sheet (1 page)
+
+Tell me what you want next 👍
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DAY 1: 14th-01-2026 
 
 def optimal(arr):
