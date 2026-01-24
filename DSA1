@@ -345,8 +345,8 @@ logging.info(out)
 
 # sys.stdout.write(out)
 #################################
-# ss=s[::-1]
-# print(ss)
+s = 'I have a car'
+print(s[::-1])
 # op: rac a evah I
 
 #output = 'car a have I'
@@ -424,6 +424,29 @@ logging.info(out)
 
 # print(out)
 # op:4a3b2c1z
+###
+✅ Fixed version (minimal change)
+s = "dddmmmmaa66666xdd"
+out = ''
+c = 1
+i = 1
+previous = s[0]
+
+while i < len(s):
+    if s[i] == previous:
+        c += 1
+    else:
+        out += previous + (str(c) if c > 1 else '')
+        previous = s[i]
+        c = 1
+
+    if i == len(s) - 1:
+        out += previous + (str(c) if c > 1 else '')
+
+    i += 1
+
+print(out)
+##
 ################################
 s = 'my nane is nane and nane of mine is nane'
 # ss=s.replace('nane','name')
