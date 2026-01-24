@@ -258,7 +258,7 @@ sec_max = float('-inf') #*******
 
 for i in lst:
     if i > max_num:
-        sec_max = max_num
+        sec_max = max_num  ***************************
         max_num = i
     elif i > sec_max and i != max_num: #**********************
         sec_max = i
@@ -302,7 +302,15 @@ data = {
     "age":   [25, 30, 35]
 }
 
-result = list(map(lambda values: dict(zip(data.keys(), values)),zip(*data.values())))
+# result = list(
+#     map(lambda values: dict(zip(data.keys(), values)),
+#         zip(*data.values()))
+# )
+
+result = [
+    dict(zip(data, values))
+    for values in zip(*data.values())
+]
 
 print(result)
 #op
@@ -362,7 +370,7 @@ def is_palindrome(s):
         right -= 1
     return True
 
-words = ["madam", "python", "level", "radar", "test", "noon"]
+words = ["madam", "python", "level", "radar", "test", "noon"]  
 result = {"palindromes": []}
 
 for word in words:
