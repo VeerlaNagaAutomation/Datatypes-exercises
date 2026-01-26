@@ -1,3 +1,26 @@
+
+import re
+
+string = """{ control = 1,signal = 1,element = 34,
+              control = 2,signal = 2,element = 36,
+              control = 3,signal = ,element = 37 }"""
+
+# extract each controller block
+controllers = re.findall(r'control\s*=\s*\d+,\s*signal\s*=\s*[^,]*,\s*element\s*=\s*\d+', string)
+
+valid = 0
+invalid = 0
+
+for c in controllers:
+    # check if signal has a value (not empty)
+    if re.search(r'signal\s*=\s*\d+', c):
+        valid += 1
+    else:
+        invalid += 1
+
+print(f"{valid} valid and {invalid} invalid controllers")
+#######################################################################################
+
 ## Match ---->> matching the string starts with pattern or not
 
 # filename="reports.pdf"
