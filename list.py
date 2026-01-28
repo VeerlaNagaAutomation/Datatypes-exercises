@@ -30,6 +30,23 @@ lst = [89,-2,78,67,90,-3,-97,98,786,678,56]
 #         if lst[j] > lst[j+1]:
 #             lst[j],lst[j+1] = lst[j+1],lst[j]
 # print(lst)
+
+lst = [5, 3, 1]
+n = 3
+🟦 i and j Table (Bubble Sort)
+Pass	i	j	Compared Elements (lst[j] , lst[j+1])	List After
+1    0	0	            (5 , 3)	              [3, 5, 1]
+1	   0	1            	(5 , 1)	[3, 1, 5]
+2   	1	0	            (3 , 1)	[1, 3, 5]
+3	   2	–	No comparison	[1, 3, 5]
+🔑 Key Observations
+i → pass number
+
+j → index comparison inside each pass
+
+Inner loop runs less times as i increases
+
+Largest element settles at the end after each pass
 #=================================
 lst = [34,56,78,-2,0-4.89,75,79]
 lst.sort()
@@ -64,7 +81,11 @@ for i in range(len(lst)):
         pos += 1
 
 print(lst) ## [1, 7, 4, 5, 0, 0, 0, 0]
+****
+lst = [1,0,2,0,3]
+res = [x for x in lst if x != 0] + [0]*lst.count(0)
 
+ ***
 
 ##====================================
 lst = [1, 0, 7, 0, 4, 0, 5, 0]
@@ -77,6 +98,10 @@ for i in range(len(lst)):
         pos += 1
 
 print(lst)  ## [0, 0, 0, 0, 4, 7, 5, 1]
+****
+res = [0]*lst.count(0) + [x for x in lst if x != 0] 
+
+***
 
 ###
 for above with changing the order
@@ -93,13 +118,35 @@ idx = len(lst) - 1
 for i in range(len(lst) - 1, -1, -1):
     if lst[i] != 0:
         lst[idx] = lst[i]
-        idx -= 1
+        idx -= 
 
 # 3. fill zeros at front
 for i in range(zero_count):
     lst[i] = 0
 
 print(lst) # [0, 0, 0, 0, 1, 7, 4, 5]
+***************
+ Walkthrough with Your List
+
+Initial list:
+
+lst = [1, 0, 7, 0, 4, 0, 5, 0]
+
+i	lst[i]	Action	idx	List state
+7	0	skip	7	unchanged
+6	5	place at idx	7	[1,0,7,0,4,0,5,5]
+		idx--	6	
+5	0	skip	6	
+4	4	place at idx	6	[1,0,7,0,4,4,5,5]
+		idx--	5	
+3	0	skip	5	
+2	7	place at idx	5	[1,0,7,7,4,4,5,5]
+		idx--	4	
+1	0	skip	4	
+0	1	place at idx	4	[1,0,7,7,1,4,5,5]
+
+
+********************
 
 
 ## =====================================
@@ -293,6 +340,20 @@ for i in k:
     if i == 2:
         c+=1
 print(c)  
+
+#########################################
+**Rotate an array by K positions
+def rotations(arr,k):
+    k = k%len(arr)
+    return arr[-k:] + arr[:-k]
+
+k = 4
+arr = [2,3,4,5,1]
+
+print(rotations(arr,k))
+
+
+#########################################
 #=====================================
 21.How to split a given dictionary of lists into a list of dictionaries using the map function?
 
@@ -525,5 +586,125 @@ circular double
 
 
 ##stack.
+
+
+#####################
+check list:
+
+🔥 MOST POPULAR PYTHON LIST DSA QUESTIONS
+🟢 EASY (Must-know, very frequent)
+
+Reverse a list
+
+lst[::-1]
+
+
+Find largest & smallest element
+
+max(lst), min(lst)
+
+
+Remove duplicates from a list
+
+list(set(lst))
+
+
+Check if list is sorted
+
+lst == sorted(lst)
+
+
+Count occurrences of an element
+
+lst.count(x)
+
+
+Find sum of elements
+
+sum(lst)
+
+
+Swap first and last elements
+
+lst[0], lst[-1] = lst[-1], lst[0]
+
+🟡 MEDIUM (VERY COMMON – Interview favorites)
+8. Move all zeros to end
+lst = [1,0,2,0,3]
+res = [x for x in lst if x != 0] + [0]*lst.count(0)
+
+9. Move all zeros to beginning
+zeros = lst.count(0)
+res = [0]*zeros + [x for x in lst if x != 0]
+
+10. Find second largest element
+sorted(set(lst))[-2]
+
+11. Rotate list by k positions
+k = 2
+lst[k:] + lst[:k]
+
+12. Find missing number (1 to n)
+missing = sum(range(1,n+1)) - sum(lst)
+
+13. Find duplicate elements
+[x for x in set(lst) if lst.count(x) > 1]
+
+14. Intersection of two lists
+list(set(a) & set(b))
+
+15. Check if two lists are equal
+a == b
+
+🔴 HARD / DSA CORE (Very impressive if you answer)
+16. Kadane’s Algorithm (Max subarray sum) ⭐
+max_sum = curr = lst[0]
+for x in lst[1:]:
+    curr = max(x, curr + x)
+    max_sum = max(max_sum, curr)
+
+17. Two Sum Problem
+seen = {}
+for i, num in enumerate(lst):
+    if target - num in seen:
+        print(seen[target-num], i)
+    seen[num] = i
+
+18. Find leaders in list
+max_from_right = lst[-1]
+leaders = [max_from_right]
+for i in range(len(lst)-2, -1, -1):
+    if lst[i] > max_from_right:
+        leaders.append(lst[i])
+        max_from_right = lst[i]
+
+19. Longest increasing subsequence (basic idea)
+
+👉 Asked conceptually, not full code.
+
+20. Merge two sorted lists
+sorted(a + b)
+
+🧠 PATTERN-BASED QUESTIONS (Interview Gold)
+Pattern	Questions
+Two Pointers	Move zeros, reverse list
+Hashing	Two Sum, duplicates
+Sliding Window	Max subarray
+Sorting	Second largest, missing number
+Backward traversal	Leaders, zero-shift
+🎯 TOP 5 YOU MUST PREPARE (Don’t skip)
+
+1️⃣ Move zeros
+2️⃣ Second largest
+3️⃣ Two Sum
+4️⃣ Max subarray sum
+5️⃣ Reverse / Rotate list
+
+🗣️ Interview Closing One-liner
+
+“Most list DSA problems can be solved using two pointers, hashing, or traversal patterns with O(n) time.”
+
+If you want next, I can:
+
 
 
