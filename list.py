@@ -352,6 +352,61 @@ arr = [2,3,4,5,1]
 
 print(rotations(arr,k))
 
+***
+2️⃣ Handle large k
+k = k % len(arr)
+
+Ensures k stays within list length
+
+Prevents unnecessary rotations
+
+📌 Example:
+
+len(arr) = 5
+
+k = 4
+
+k % 5 = 4
+
+If k = 9 → 9 % 5 = 4 (same result)
+***
+3️⃣ Core rotation logic
+return arr[-k:] + arr[:-k]
+
+🔍 Break it down:
+arr = [2, 3, 4, 5, 1]
+k = 4
+
+arr[-k:] → last k elements
+arr[-4:] → [3, 4, 5, 1]
+
+arr[:-k] → elements except last k
+arr[:-4] → [2]
+
+Combine both:
+[3, 4, 5, 1] + [2]
+
+🔹 Final Output
+[3, 4, 5, 1, 2]
+***
+🔹 Time & Space Complexity
+
+Time: O(n)
+
+Space: O(n) (creates new list)
+
+🧠 Interview One-Liner
+
+“This function rotates a list to the right using slicing, handling large rotations with modulo.”
+
+***
+right Rotation:
+return arr[-k:] + arr[:-k]
+
+left ratations:
+
+return arr[k:] + arr[:k]
+
 
 #########################################
 #=====================================
