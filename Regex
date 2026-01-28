@@ -19,7 +19,91 @@ for c in controllers:
         invalid += 1
 
 print(f"{valid} valid and {invalid} invalid controllers")
+**
+This is the MOST IMPORTANT part 👇
+
+signal → literal word
+
+\s*=\s* → equals with optional spaces
+
+[^,]* → zero or more characters EXCEPT comma
+
+✔ Matches:
+
+signal = 1
+signal = 
+signal = abc
+
+
+****
 #######################################################################################
+# match ==  checks string starts with patterns are not
+filename ='Reports'
+# pattern = '[a-zA-Z]'
+pattern = r'\w'#R
+pattern = r'\w+' #Reports
+import re
+match = re.match(pattern,filename)
+
+if match:
+    print(match.group()) #R
+else:
+    print('Not matching')
+    
+fullmatch ==  entire strings matches pattern or not
+vehical_number = 'KA53CJ0875'
+pattern = '^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$'
+import re
+
+match = re.fullmatch(pattern, vehical_number)
+if match:
+    print(match.group())  #KA53CJ0875
+else:
+    print('Not matching')
+    
+    
+IP = input('Enter the IP address')
+pattern = r'^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$'
+import re
+
+match = re.fullmatch(pattern, IP)
+if match:
+    print(match.group() ,'is a Valid IP')  #10.145.88.109 is a Valid IP
+else:
+    print('Not a valid IP')  
+
+search() find the first occurence of a pattern and gives index by useing start()
+
+email= 'nagababuveerla12@gmail.com'
+pattern='@gmail.com'
+
+import re
+match = re.search(pattern,email)
+if match:
+    print(match.start())  #16
+else:
+    print('Not matching')
+
+findall() ==  find all matches of a pattern in string and return list of matches or empty if None are found
+data = """
+Contact us at support@gmail.com or admin@company.in
+Call 9876543210 or 9123456789
+Backup email: test.user123@yahoo.com
+"""
+import re
+
+def extract(data):
+    emails = re.findall(r'[a-zA-Z0-9.%_+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',data)
+    phones = re.findall(r'\d{10}',data)
+    
+    return emails,phones
+    
+print(extract(data))  
+
+op:
+(['support@gmail.com', 'admin@company.in', 'test.user123@yahoo.com'], ['9876543210', '9123456789'])  
+
+#########################################################################################
 
 ## Match ---->> matching the string starts with pattern or not
 
