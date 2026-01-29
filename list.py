@@ -1,4 +1,23 @@
 lst = [89,-2,78,67,90,-3,-97,98,786,678,56]
+lst.append('t')
+lst.append([5]) it directly [5]
+lst1 = [True,False,'naga','Guhan','ram','setha']
+
+lst.extend(lst1)
+lst.extend([3])  it add only 3
+
+lst2 = lst.copy()
+# print(lst2)
+
+lst.insert(1,'FIRE') #inserts at index
+
+lst.pop(0) #remove specified index element
+lst.pop()  #remove lastitem
+
+del lst[3] #delete particulat index
+del lst  #removes complete list
+lst.clear()
+lst.reverse()
 # lst.sort() # sort at in place
 # print(lst) #[-97, -3, -2, 56, 67, 78, 89, 90, 98, 678, 786]
 # l1=sorted(lst) # creates new list
