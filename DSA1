@@ -285,6 +285,164 @@ print(len_lon_sub('abcabcbb'))
 print(lon_substring_with_repeating_char('abcabcbb'))    
 op:
 ('abc', 3)
+***********
+🔁 ITERATION-BY-ITERATION DIAGRAM
+
+We use Sliding Window:
+
+l → left pointer
+
+r → right pointer
+
+set1 → characters inside current window
+
+🔹 Initial State
+l = 0
+res = 0
+set = {}
+sub = ""
+
+🔹 Iteration 1 — r = 0 → 'a'
+Check
+'a' not in set
+
+Action
+add 'a'
+
+Window
+[a]
+ ↑
+ l,r
+
+Update result
+length = 1
+res = 1
+sub = "a"
+
+🔹 Iteration 2 — r = 1 → 'b'
+Check
+'b' not in set
+
+Action
+add 'b'
+
+Window
+[a b]
+ ↑   ↑
+ l   r
+
+Update
+length = 2
+res = 2
+sub = "ab"
+
+🔹 Iteration 3 — r = 2 → 'c'
+Check
+'c' not in set
+
+Action
+add 'c'
+
+Window
+[a b c]
+ ↑     ↑
+ l     r
+
+Update
+length = 3
+res = 3
+sub = "abc" ✅
+
+🔹 Iteration 4 — r = 3 → 'a' (DUPLICATE ❌)
+Check
+'a' in set
+
+While loop starts
+remove s[l] = 'a'
+l = 1
+
+Now add 'a'
+set = {'b','c','a'}
+
+Window
+[b c a]
+ ↑     ↑
+ l     r
+
+Length
+length = 3 (no update)
+
+🔹 Iteration 5 — r = 4 → 'b' (DUPLICATE ❌)
+While loop
+remove 'b'
+l = 2
+
+Add 'b'
+set = {'c','a','b'}
+
+Window
+[c a b]
+ ↑     ↑
+ l     r
+
+🔹 Iteration 6 — r = 5 → 'c' (DUPLICATE ❌)
+While loop
+remove 'c'
+l = 3
+
+Add 'c'
+set = {'a','b','c'}
+
+Window
+[a b c]
+ ↑     ↑
+ l     r
+
+🔹 Iteration 7 — r = 6 → 'b' (DUPLICATE ❌)
+While loop
+remove 'a' → l=4
+remove 'b' → l=5
+
+Add 'b'
+set = {'c','b'}
+
+Window
+[c b]
+ ↑   ↑
+ l   r
+
+🔹 Iteration 8 — r = 7 → 'b' (DUPLICATE ❌)
+While loop
+remove 'c' → l=6
+remove 'b' → l=7
+
+Add 'b'
+set = {'b'}
+
+Window
+[b]
+ ↑
+ l,r
+
+🏁 FINAL RESULT
+Longest substring = "abc"
+Length = 3
+
+📊 COMPLETE DRY-RUN TABLE
+r	s[r]	Action	l	Window	res	sub
+0	a	add	0	a	1	a
+1	b	add	0	ab	2	ab
+2	c	add	0	abc	3	abc
+3	a	remove a, add a	1	bca	3	abc
+4	b	remove b, add b	2	cab	3	abc
+5	c	remove c, add c	3	abc	3	abc
+6	b	remove a,b	5	cb	3	abc
+7	b	remove c,b	7	b	3	abc
+🧠 ONE-LINE SUMMARY (INTERVIEW GOLD)
+
+We slide a window over the string, expanding with unique characters and shrinking from the left when duplicates appear, keeping track of the maximum window size.
+
+**************
 ############################
 ✅ Method 1: Print in reverse (NO temp variable, NO built-ins)
 s = 'I have a car'
