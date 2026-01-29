@@ -100,6 +100,20 @@ for i in range(len(lst)):
         pos += 1
 
 print(lst) ## [1, 7, 4, 5, 0, 0, 0, 0]
+
+*****
+🧠 What Is Really Going On?
+Key Idea
+
+pos tracks where the next non-zero value should be placed
+
+When a non-zero is found:
+
+Swap it to pos
+
+Increment pos
+	****
+	
 ****
 lst = [1,0,2,0,3]
 res = [x for x in lst if x != 0] + [0]*lst.count(0)
@@ -137,7 +151,7 @@ idx = len(lst) - 1
 for i in range(len(lst) - 1, -1, -1):
     if lst[i] != 0:
         lst[idx] = lst[i]
-        idx -= 
+        idx -= 1
 
 # 3. fill zeros at front
 for i in range(zero_count):
@@ -207,7 +221,7 @@ a = [1,2,3,4,5,6] ## #follow this only single loop###
 # out: [[1, 2], [3, 4], [5, 6]]
 out = [ ]
 k = 2
-for i in range(0,len(a),k):
+for i in range(0,len(a),k):   ******************************************
     out.append(a[i:i+k])
 print(out)    ## [[1, 2], [3, 4], [5, 6]]
 
@@ -222,7 +236,7 @@ for i in range(0,len(a),k):
     if i < 8:    
         out.append(a[i:i+k])
     else:
-        out.extend(a[i:])
+        out.extend(a[i:]) ******
 
 print(out)     # [[1, 2], [3, 4], [5, 6], [7, 8], 10, 9]
 
@@ -239,6 +253,52 @@ def flatten(lst):
             l1.append(i)
     retuen l1     
 print(flatten(arr))  # [2, 4, 4, 5, 7, 8, 9]
+
+****
+📌 Call Stack Diagram (Top → Bottom)
+flatten([2, [4,[4,[5,[7]]]], 8, 9])
+│
+├── 2        → l1 = [2]
+│
+├── flatten([4,[4,[5,[7]]]])
+│   │
+│   ├── 4    → l1 = [2,4]
+│   │
+│   ├── flatten([4,[5,[7]]])
+│   │   │
+│   │   ├── 4 → l1 = [2,4,4]
+│   │   │
+│   │   ├── flatten([5,[7]])
+│   │   │   │
+│   │   │   ├── 5 → l1 = [2,4,4,5]
+│   │   │   │
+│   │   │   ├── flatten([7])
+│   │   │   │   └── 7 → l1 = [2,4,4,5,7]
+│   │   │   │
+│   │   │   └── return
+│   │   │
+│   │   └── return
+│   │
+│   └── return
+│
+├── 8        → l1 = [2,4,4,5,7,8]
+│
+├── 9        → l1 = [2,4,4,5,7,8,9]
+│
+└── return
+	***
+✅ Safer Interview-Preferred Version
+def flatten(lst, result=None):
+    if result is None:
+        result = []
+    for i in lst:
+        if isinstance(i, list):
+            flatten(i, result)
+        else:
+            result.append(i)
+    return result
+
+**************
 ## Reverse of above===========
 a = [2, 4, 4, 5, 7, 8, 9]
 output = [2,[4,[4,[5,[7]]]],8,9]   ####  By heart ###
