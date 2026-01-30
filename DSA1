@@ -110,7 +110,7 @@ while True:
         n = int(input('Enter the number: '))
         print("you entered", n)
         break
-    except:
+    except ValueError:
         print('Invalid input pls enter the integer number')
 num = n
 sum = 0
