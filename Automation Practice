@@ -36,6 +36,9 @@ we can't clone private repo if trys error will come
 
 private repos how to clone:
 1. cli ---> create a personal access token PAT ----> git clone reperance the PAT
+    settings---> developer options --->PAT --Generate new token ---->generate thr token ---> copy token
+
+git clone https://token@github.com/VeerlaNagaAutomation/Datatypes-exercises-private.git
  
 
 2. with github desktop GUI
