@@ -21,7 +21,17 @@ On branch master
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
+====
+for cloning to local 1st copy path from github repo and open cmd 
+C:\Users\Renuka\Documents>git clone https://github.com/VeerlaNagaAutomation/Datatypes-exercises.git
+Cloning into 'Datatypes-exercises'...
+remote: Enumerating objects: 234, done.
+remote: Counting objects: 100% (84/84), done.
+remote: Compressing objects: 100% (84/84), done.
+remote: Total 234 (delta 47), reused 0 (delta 0), pack-reused 150 (from 2)
+Receiving objects: 100% (234/234), 117.10 KiB | 1.92 MiB/s, done.
+Resolving deltas: 100% (122/122), done.
 
-C:\Users\Renuka\Documents\my_first_repo>
+C:\Users\Renuka\Documents>
 
 https://www.linkedin.com/posts/madhusaiyannamini21_alert-automationtesting-seleniumwebdriver-ugcPost-7414206741812260864-4t3n?utm_source=share&utm_medium=member_desktop&rcm=ACoAADezKqcB6siz3msmh6vdtBlzx-fvimTjn5A
