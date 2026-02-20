@@ -1,1 +1,27 @@
+GIT CLASS::
+
+Microsoft Windows [Version 10.0.26100.7840]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Renuka>cd Documents
+
+C:\Users\Renuka\Documents>mkdir my_first_repo
+
+C:\Users\Renuka\Documents>cd my_first_repo
+
+C:\Users\Renuka\Documents\my_first_repo>git status
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\Renuka\Documents\my_first_repo>git init
+Initialized empty Git repository in C:/Users/Renuka/Documents/my_first_repo/.git/
+
+C:\Users\Renuka\Documents\my_first_repo>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+C:\Users\Renuka\Documents\my_first_repo>
+
 https://www.linkedin.com/posts/madhusaiyannamini21_alert-automationtesting-seleniumwebdriver-ugcPost-7414206741812260864-4t3n?utm_source=share&utm_medium=member_desktop&rcm=ACoAADezKqcB6siz3msmh6vdtBlzx-fvimTjn5A
