@@ -32,6 +32,14 @@ remote: Total 234 (delta 47), reused 0 (delta 0), pack-reused 150 (from 2)
 Receiving objects: 100% (234/234), 117.10 KiB | 1.92 MiB/s, done.
 Resolving deltas: 100% (122/122), done.
 
-C:\Users\Renuka\Documents>
+we can't clone private repo if trys error will come
+
+private repos how to clone:
+1. cli ---> create a personal access token PAT ----> git clone reperance the PAT
+ 
+
+2. with github desktop GUI
+
+
 
 https://www.linkedin.com/posts/madhusaiyannamini21_alert-automationtesting-seleniumwebdriver-ugcPost-7414206741812260864-4t3n?utm_source=share&utm_medium=member_desktop&rcm=ACoAADezKqcB6siz3msmh6vdtBlzx-fvimTjn5A
